@@ -1,0 +1,16 @@
+.DS_Store
+*.DS_Store
+~$*
+
+# Large media & data assets live in the sz_RECIPE_repo Google Drive, not git.
+# (Recipe outcome images are the exception - they're small and live in
+# recipes/images/, tracked, so recipes render on GitHub.)
+ingredients/*
+videos/
+hero/
+
+# Exception: the Customer 360 ingredient set is small, synthetic, and linked
+# directly from its recipe, so it ships in the repo. (Note the pattern above
+# must be `ingredients/*`, not `ingredients/`, or git never descends far
+# enough to see this negation.)
+!ingredients/customer360/
