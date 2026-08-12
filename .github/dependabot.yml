@@ -14,9 +14,3 @@ updates:
           - "senzing-factory/*"
     schedule:
       interval: "daily"
-  - package-ecosystem: "pip"
-    cooldown:
-      default-days: 21
-    directory: "/"
-    schedule:
-      interval: "daily"
