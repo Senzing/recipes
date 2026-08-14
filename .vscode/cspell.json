@@ -5,14 +5,30 @@
     "CCLA",
     "CODEOWNER",
     "cooldown",
+    "creds",
     "EFEAT",
+    "Everton",
+    "explorable",
+    "Freitas",
+    "frontmatter",
     "ICLA",
     "INPUTFILE",
+    "keepapart",
     "kernelsam",
+    "Kiro",
+    "LEIE",
+    "NPPES",
+    "Paco",
+    "PNAME",
     "Senzing",
     "shellcheck",
+    "stovetop",
+    "Summerlin",
+    "wakeups"
   ],
   "ignorePaths": [
-    ".git/**"
+    ".git/**",
+    "ingredients/customer360/*.csv",
+    "ingredients/customer360/generate.py"
   ]
 }
