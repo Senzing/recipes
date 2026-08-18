@@ -60,7 +60,7 @@ Data sources (pre-staged in s3://npi-public-data-input-raw/):
 - NPPES NPI: licensed healthcare providers, Las Vegas, NV
 - OpenData.org: commercial provider enrichment, Las Vegas, NV
 
-License & Credentials: The Senzing License is attached, and the RDS password is located in the ./Credentials/creds.txt file.
+License & Credentials: I have provided the Senzing license file - it is attached to this chat, or in your working folder; do not guess a path, ask me if you can't find it. The RDS password is in ./Credentials/creds.txt.
 
 Steps:
 1. Inspect both source files and propose field mappings using the Senzing MCP mapping_workflow. Show the mappings for my review before proceeding.

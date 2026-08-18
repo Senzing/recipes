@@ -48,10 +48,10 @@ Prepare your local machine to run Senzing. **Attach your Senzing license file to
 ```
 Goal: Stand up a local Senzing instance, ready to load data.
 
-
 Hard rules:
 - Use the Senzing MCP. Do not rely on general training.
-- Deploy Senzing locally using your Senzing license file; a local SQLite/in-memory datastore is fine for a POC.
+- I have provided the Senzing license file: it is attached to this chat, or in your working folder. Do not guess a path - ask me if you can't find it.
+- Deploy Senzing locally using the license file I provided; a local SQLite/in-memory datastore is fine for a POC.
 - Confirm the instance is up and ready before finishing.
 ```
 
@@ -67,7 +67,6 @@ pre-mapped CORD, this is a raw export, so **mapping is part of the cook.** Let t
 ```
 Goal: Using the existing local Senzing instance, map, load, and resolve the CRM customer export into a customer master.
 
-
 Hard rules:
 - Use the Senzing MCP. Do not rely on general training.
 - Map the source with the Senzing MCP mapping_workflow - do not hand-code the Senzing JSON.
@@ -77,10 +76,8 @@ Hard rules:
 - Only map and load the requested data (crm.csv). Do not load in the online_orders.csv file yet.
 - Map only the fields you need.
 
-
 Preferences:
 - Provide me live status updates on the data ingestion.
-
 
 Steps:
 1. Map and load crm.csv as data source CRM. Register the data source as CRM.
@@ -105,7 +102,6 @@ Serve the customer master through the **Entity Browser** place setting, stretche
 ```
 Goal: Build a Customer 360 web app on the resolved data in the existing Senzing instance, giving one complete view per customer.
 
-
 Hard rules:
 - Keep all previous Hard Rules in force.
 - Use the Senzing MCP, not general training.
@@ -116,7 +112,6 @@ Hard rules:
 - Route every entry point (search, dashboard drill through, related customer link) to one shared customer detail screen.
 - Confirm the app responds before finishing.
 
-
 Preferences:
 - Overview dashboard from the data mart report tables: total customers, records to customers compression, count of customers in more than one source, and a relationships breakdown. Make every metric a drill through that opens the underlying customer list, then the profile.
 - Search by name, address, email, or phone.
@@ -126,7 +121,6 @@ Preferences:
 - On the profile, show the CRM payload (customer_since or tenure, segment, lifetime_value) alongside any online payload (order_count, last_order).
 - Why match: for any linked pair, show the feature scores that resolved them side by side.
 - How: for any merged records, using the Senzing HOW report to show the feature scores that merged them.
-
 
 Steps:
 1. Build a web app to show a Customer 360 view of the resolved data in the existing Senzing instance.
@@ -153,13 +147,11 @@ master, and the flat profiles turn into true 360s. Its field names differ from t
 ```
 Goal: Add the online orders feed to the existing Senzing instance and re-resolve all data across both sources.
 
-
 Hard rules:
 - Use the Senzing MCP. Do not rely on general training.
 - Don't forget the previous Hard Rules.
 - Use the MCP mapping_workflow to map the data. Do not hand-code the JSON.
 - Register the data source as ONLINE_ORDERS. Multithread the load, complete file, no sleep/wakeups, and process all redo records.
-
 
 Steps:
 1. Map and load online_orders.csv as data source ONLINE_ORDERS.

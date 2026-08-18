@@ -50,12 +50,13 @@ Hard rules:
 - Use multithreading for loading.
 - Use complete datasets.
 - Process any redo records so resolution is complete.
+- I have provided the Senzing license file: it is attached to this chat, or in your working folder. Do not guess a path - ask me if you can't find it.
 
 Preferences:
 - Provide me live status updates on the data ingestion.
 
 Steps:
-1. Deploy Senzing using your Senzing license file.
+1. Deploy Senzing using the license file I provided.
 2. Load the PPP and Department of Labor Compliance Action snapshots from the Las Vegas Senzing CORDs.
 3. When resolution is complete, generate a merge report in markdown showing what Senzing did with the data.
 ```
