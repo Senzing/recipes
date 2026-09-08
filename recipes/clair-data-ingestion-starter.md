@@ -32,6 +32,7 @@ the how. Cook it on your own data by swapping the CORDs for your sources.
 ## Setup: What you'll need
 
 - **Setup (one-time):** an AI coding assistant, the **Senzing MCP**, and your **Senzing license** - new to this? Start with **[Get Started](../getting-started.md)**.
+- **Attach your Senzing license file to the chat now** (or drop it in your assistant's working folder).
 - **Ingredients:** **PPP Loans** + **US Labor Violations** (Dept. of Labor), both Las Vegas CORD
   sources - the MCP supplies them. *(the **Plus** step adds **NPI**.)*
 
@@ -39,7 +40,7 @@ the how. Cook it on your own data by swapping the CORDs for your sources.
 
 ## Cook: Ingest and load data
 
-Map + load both sources and resolve them. **This is the loader** - cook it properly. **Attach your Senzing license file to this chat** (the one you downloaded in Get Started), then paste:
+Map + load both sources and resolve them. **This is the loader** - cook it properly. Paste:
 
 ```
 Goal: Stand up Senzing, load in 2 pre-mapped datasets and generate a merge report.
@@ -50,12 +51,13 @@ Hard rules:
 - Use multithreading for loading.
 - Use complete datasets.
 - Process any redo records so resolution is complete.
+- I have provided the Senzing license file: it is attached to this chat, or in your working folder. Do not guess a path - ask me if you can't find it.
 
 Preferences:
 - Provide me live status updates on the data ingestion.
 
 Steps:
-1. Deploy Senzing using your Senzing license file.
+1. Deploy Senzing using the license file I provided.
 2. Load the PPP and Department of Labor Compliance Action snapshots from the Las Vegas Senzing CORDs.
 3. When resolution is complete, generate a merge report in markdown showing what Senzing did with the data.
 ```
@@ -63,11 +65,6 @@ Steps:
 **Expected outcome:** live ingest status, then a **merge report** - record and entity
 counts, compression ratios, per-source summaries, entity-size distribution, and the **cross-source
 matches.** In my run, **92 entities were shared between PPP and DoL** - the cross-source connections.
-
-**Questions that may come up:**
-- *Do I need to map the data?* No - CORDs are pre-mapped to the Senzing spec.
-- *Where does the data come from?* The MCP fetches the complete CORD datasets; you don't supply files.
-- *How long?* Minutes. If you see no live updates, remind it: *"provide live status, no sleep/wakeups."*
 
 ---
 
@@ -82,7 +79,7 @@ Hard rules:
 - Use the Senzing MCP. Do not rely on general training.
 - Don't forget the previous Hard Rules.
 - If you can't start a local web server the user can open in a browser, build the same visualizer as a single self-contained static HTML file instead, keeping as many of the same features as possible.
-- Only use a Senzing mart and/or the Senzing SDK to populate the UX. Do not use any direct database queries.
+- Only use a Senzing mart and/or the Senzing SDK to populate the UX. Never query Senzing's internal engine tables directly.
 - Only present the network graph based on a selected entity. Never the whole graph at once.
 - Follow the Senzing MCP reporting_guide for query patterns and graph layouts.
 - Confirm the visualizer works before finishing: that the local site is responding, or (if you used the static-HTML fallback) that the file was written and opens.
@@ -99,10 +96,6 @@ Features:
 **Expected outcome:** a local URL → a dashboard with headline metrics, source comparison, match-key
 breakdown, **search**, and a **network graph** rendered for a selected entity (with a legend),
 cross-source entities at the top.
-
-**Questions that may come up:**
-- *Why only one entity's graph at a time?* The whole graph is unreadable at scale - that's a hard rule.
-- *Can it query the database directly?* No - UX is populated only from a Senzing mart/SDK.
 
 ---
 
@@ -126,10 +119,6 @@ Steps:
 **Expected outcome:** the report refreshes to **3 sources (~76,000 records)** and **triple-merge
 entities** appear - records resolving across all three (which providers took PPP loans *and* had
 violations). The visualizer's legend gains NPI and new nodes show up.
-
-**Questions that may come up:**
-- *Does it reload everything?* It re-resolves the new source against what's already loaded - that's the cross-source magic.
-- *Why are the triple-merges the interesting part?* They're the entities present in all three sources - the strongest cross-source connections.
 
 ---
 
