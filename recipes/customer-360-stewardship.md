@@ -34,9 +34,6 @@ The good news is that a basic queue can be added with just a single prompt! Once
   - **ONLINE_ORDERS** - `online_orders.csv`, ~600 accounts (~400 are the same people as CRM
     customers; ~200 are online-only), with `order_count` / `last_order` as payload.
   - **The Customer 360 app** - built from the [Customer 360 recipe](./customer-360-crm-online.md), with `CRM` and `ONLINE_ORDERS` loaded and resolved.
-- *(Confirm before cooking: implementation language - don't assume Python; its binding is Linux-only.)*
-
-Prior to running this recipe, you will want to have already prepared the Customer 360 recipe, which we will build off of here.
 
 ---
 
