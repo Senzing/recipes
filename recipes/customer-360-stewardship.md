@@ -25,8 +25,7 @@ It would be really helpful to surface certain results to a human for further rev
 
 The good news is that a basic queue can be added with just a single prompt! Once you run it, you will have the ability to explore these possible matches sorted by Senzing's match key. Every user likely has a slightly different need and take on stewardship, but this basic functionality will allow you to quickly identify which match keys are most important to your business and which ones you want to focus on first. You can then refine the queue and the review screen to your heart's content.
 
-
-## What you'll need
+## Setup: What you'll need
 
 - **Setup (one-time):** an AI coding assistant, the **Senzing MCP**, and your **Senzing license** - new to this? Start with **[Get Started](../getting-started.md)**.
 - **Ingredients:** two synthetic source files in [`ingredients/customer360/`](../ingredients/customer360/):
@@ -37,13 +36,11 @@ The good news is that a basic queue can be added with just a single prompt! Once
   - **The Customer 360 app** - built from the [Customer 360 recipe](./customer-360-crm-online.md), with `CRM` and `ONLINE_ORDERS` loaded and resolved.
 - *(Confirm before cooking: implementation language - don't assume Python; its binding is Linux-only.)*
 
----
-
-## Step 1 - Prepare the kitchen
-
 Prior to running this recipe, you will want to have already prepared the Customer 360 recipe, which we will build off of here.
 
-## Step 2 - Build the review queue
+---
+
+## Cook: Build the stewardship queue
 
 ```
 Goal: You are working in the Customer 360 project - either the folder where you built it earlier, or a fresh rebuild of it. The local Senzing instance has CRM and ONLINE_ORDERS loaded and resolved, and the Customer 360 app is here. Add a data stewardship queue to that app: surface what needs a human decision, show each candidate pair side by side, and let a human decide Merge or Don't merge.

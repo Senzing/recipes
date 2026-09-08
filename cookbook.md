@@ -25,9 +25,7 @@ You're the **chef**; the **sous-chef** is an AI assistant interpreting each prom
 ### [Stewardship on CRM + Online Orders](recipes/customer-360-stewardship.md)
 *Customer 360 · Intermediate · Local · ~20m · Clair Sullivan*
 
-**What you'll make:** an add-on to the Customer 360 app - a stewardship queue that surfaces the pairs
-Senzing flagged as possible matches, shows each pair side by side, and lets a human decide Merge or
-Don't merge, with every decision recorded and durable. Do the Customer 360 recipe first.
+**What you'll make:** an add-on to the Customer 360 app - a stewardship queue that surfaces the pairs Senzing flagged as possible matches, shows each pair side by side, and lets a human decide Merge or Don't merge, with every decision recorded and durable. Do the Customer 360 recipe first.
 
 ### [Healthcare Exclusion Screening](recipes/nigel-healthcare-aws-entity-browser.md)
 *Compliance · Advanced · AWS · a few hours · Nigel DeFreitas*
