@@ -27,11 +27,12 @@ Clair's network-graph** idea for the place setting rather than reinvent it, and 
 load to last names starting "A"** to keep the walkthrough snappy (drop that filter to load them
 all). The payoff was real: the exclusions overlay surfaced actual excluded Las Vegas doctors.
 
-> ⚠️ **Not a quick live demo** - real AWS infra, hours of build time, real charges. 
+> ⚠️ **Not a quick live demo** - real AWS infra, hours of build time, real charges.
 
 ## Setup: What you'll need
 
 - **Setup (one-time):** an AI coding assistant, the **Senzing MCP**, and your **Senzing license** - new to this? Start with **[Get Started](../getting-started.md)**.
+- **Attach your Senzing license file to the chat now** (or drop it in your assistant's working folder).
 - **AWS environment:** **production** - CDK/RDS/ECS/Glue/Step Functions, IAM via STS, AWS Docs MCP, creds. A substantial build.
 - **Ingredients:** **NPPES NPI** + **OpenData.org** (Las Vegas), pre-staged in
   `s3://npi-public-data-input-raw/`. *(the **Plus** step adds **OIG LEIE exclusions**.)*
@@ -40,7 +41,7 @@ all). The payoff was real: the exclusions overlay surfaced actual excluded Las V
 
 ## Cook: Ingest and load data
 
-Map both sources, deploy the AWS pipeline, run ER, export. **The loader must be production-grade.** **Attach your Senzing license file to this chat** (the one you downloaded in Get Started), then paste:
+Map both sources, deploy the AWS pipeline, run ER, export. **The loader must be production-grade.** Paste:
 
 ```
 Important: Use the Senzing MCP for all Senzing work. Use the AWS Documentation MCP for any AWS CDK questions.
@@ -60,7 +61,7 @@ Data sources (pre-staged in s3://npi-public-data-input-raw/):
 - NPPES NPI: licensed healthcare providers, Las Vegas, NV
 - OpenData.org: commercial provider enrichment, Las Vegas, NV
 
-License & Credentials: The Senzing License is attached, and the RDS password is located in the ./Credentials/creds.txt file.
+License & Credentials: I have provided the Senzing license file - it is attached to this chat, or in your working folder; do not guess a path, ask me if you can't find it. The RDS password is in ./Credentials/creds.txt.
 
 Steps:
 1. Inspect both source files and propose field mappings using the Senzing MCP mapping_workflow. Show the mappings for my review before proceeding.
@@ -72,11 +73,6 @@ Steps:
 **Expected outcome:** it proposes **field mappings and pauses for your review** - approve to
 continue. Then CDK stacks deploy, the pipeline loads with progress printed, the graph exports to S3,
 and a summary report prints. My run: **~223,000 records → ~174,000 entities; 663 cross-source overlaps.**
-
-**Questions that may come up:**
-- *It stopped after the mappings.* By design - review and approve before it builds.
-- *Cost / time?* Real AWS charges; ~hours end to end.
-- *A database-init step appeared.* Expected - the pipeline registers data-source IDs / initializes the DB before loading.
 
 ---
 
@@ -91,7 +87,7 @@ Goal: Build an Entity Browser web UI that loads the resolved entity export from 
 
 Hard rules:
 - Follow the Senzing MCP reporting_guide for all query patterns, graph layouts, and why-match interfaces.
-- Populate the UX only from a Senzing data mart and/or the Senzing SDK. No direct database queries.
+- Populate the UX only from a Senzing data mart and/or the Senzing SDK. Never query Senzing's internal engine tables directly.
 - Only render the network graph for a selected entity. Never the whole graph at once.
 
 Features:
@@ -104,9 +100,6 @@ Features:
 **Expected outcome:** an Entity Browser web UI - search by name / entity ID / exclusion status;
 entities with **source-labeled** records; a labeled **network graph**; **"Why match?"** with feature
 scores for a selected pair.
-
-**Questions that may come up:**
-- *Where do the query/graph patterns come from?* The MCP's `reporting_guide` - don't hand-roll them.
 
 ---
 
@@ -132,10 +125,6 @@ Steps:
 **excluded doctors** (the video found **Victor C. Sutton** and **Everton's Place**, both tied to
 real Nevada medical-fraud cases). The Entity Browser re-plates: **exclusion badges**, an
 **exclusion-status filter**, **highlighted** OIG-linked nodes; updated stats print (individual vs. org).
-
-**Questions that may come up:**
-- *Why only last name "A"?* The demo limits the OIG load to last-name-A for speed; drop the filter to load all.
-- *Did it merge OIG into existing entities?* Yes - that's how excluded providers get flagged.
 
 ---
 

@@ -32,32 +32,30 @@ There are two things worth calling out in this data. First, the two files **don'
 ## Setup: What you'll need
 
 - **Setup (one-time):** an AI coding assistant, the **Senzing MCP**, and your **Senzing license** - new to this? Start with **[Get Started](../getting-started.md)**.
-- **Ingredients:** two synthetic source files in [`ingredients/customer360/`](../ingredients/customer360/):
+- **Attach your Senzing license file to the chat now** (or drop it in your assistant's working folder).
+- **Ingredients:** two synthetic source files in [`ingredients/customer360/`](../ingredients/customer360/) - download both, then **attach them to the chat now** (or drop them in your assistant's working folder):
   - **CRM** - `crm.csv`, ~1,000 customers (columnar CRM export: name, address, phone, email,
     plus `customer_since` / `segment` / `lifetime_value`).
   - **ONLINE_ORDERS** - `online_orders.csv`, ~600 accounts (~400 are the same people as CRM
     customers; ~200 are online-only), with `order_count` / `last_order` as payload.
-- *(Confirm before cooking: implementation language - don't assume Python; its binding is Linux-only.)*
 
 ---
 
 ## Prep: Stand up Senzing
 
-Prepare your local machine to run Senzing. **Attach your Senzing license file to this chat** (the one you downloaded in Get Started), then paste:
+Prepare your local machine to run Senzing. Paste:
 
 ```
 Goal: Stand up a local Senzing instance, ready to load data.
 
-
 Hard rules:
 - Use the Senzing MCP. Do not rely on general training.
-- Deploy Senzing locally using your Senzing license file; a local SQLite/in-memory datastore is fine for a POC.
+- I have provided the Senzing license file: it is attached to this chat, or in your working folder. Do not guess a path - ask me if you can't find it.
+- Deploy Senzing locally using the license file I provided; a local SQLite/in-memory datastore is fine for a POC.
 - Confirm the instance is up and ready before finishing.
 ```
 
 **Expected outcome:** a local Senzing instance, ready to load data into SQLite.
-**Questions that may come up:**
-- *Do I have to use SQLite?* No. If you prefer, you can specify any appropriate SQL database (PostgreSQL, MySQL, etc.), or none at all and allow Claude to create it for you. SQLite was specified here because of its ease of use for a POC.
 
 ## Cook: Ingest and load data
 
@@ -67,7 +65,6 @@ pre-mapped CORD, this is a raw export, so **mapping is part of the cook.** Let t
 ```
 Goal: Using the existing local Senzing instance, map, load, and resolve the CRM customer export into a customer master.
 
-
 Hard rules:
 - Use the Senzing MCP. Do not rely on general training.
 - Map the source with the Senzing MCP mapping_workflow - do not hand-code the Senzing JSON.
@@ -76,11 +73,10 @@ Hard rules:
 - Do not use sleep/wakeups.
 - Only map and load the requested data (crm.csv). Do not load in the online_orders.csv file yet.
 - Map only the fields you need.
-
+- I have provided the source files: crm.csv and online_orders.csv are attached to this chat, or in your working folder. Do not guess a path - ask me if you can't find them.
 
 Preferences:
 - Provide me live status updates on the data ingestion.
-
 
 Steps:
 1. Map and load crm.csv as data source CRM. Register the data source as CRM.
@@ -90,11 +86,6 @@ Steps:
 **Expected outcome:** a resolved **customer master** - one entity per customer - that everything else
 hangs off. On its own it's just profiles from a single system; the 360 fills in when you serve it (the Plate
 step) and add behavior + relationships (the Plus step).
-**Questions that may come up:**
-- *Why map at all - the CORD recipes didn't?* Those CORDs ship pre-mapped but real exports don't. The
-  `mapping_workflow` reads the columns and maps them to the Senzing spec so you don't hand-write JSON.
-- *Are `segment` / `lifetime_value` used for matching?* No - they're **payload**, carried along and
-  shown on the profile, but not used to resolve identities.
 
 ---
 
@@ -105,17 +96,15 @@ Serve the customer master through the **Entity Browser** place setting, stretche
 ```
 Goal: Build a Customer 360 web app on the resolved data in the existing Senzing instance, giving one complete view per customer.
 
-
 Hard rules:
 - Keep all previous Hard Rules in force.
 - Use the Senzing MCP, not general training.
 - Follow the Senzing MCP reporting_guide for every query, entity view, dashboard, and graph pattern.
-- Populate the app only from a Senzing data mart and/or the Senzing SDK. No direct database queries.
+- Populate the app only from a Senzing data mart and/or the Senzing SDK. Never query Senzing's internal engine tables directly.
 - Create a network graph but only render the graph for a selected customer, never the full graph.
 - Do not label the relationships in the network graph.
 - Route every entry point (search, dashboard drill through, related customer link) to one shared customer detail screen.
 - Confirm the app responds before finishing.
-
 
 Preferences:
 - Overview dashboard from the data mart report tables: total customers, records to customers compression, count of customers in more than one source, and a relationships breakdown. Make every metric a drill through that opens the underlying customer list, then the profile.
@@ -127,7 +116,6 @@ Preferences:
 - Why match: for any linked pair, show the feature scores that resolved them side by side.
 - How: for any merged records, using the Senzing HOW report to show the feature scores that merged them.
 
-
 Steps:
 1. Build a web app to show a Customer 360 view of the resolved data in the existing Senzing instance.
 2. Create a network graph that shows the linkages between all records for a selected customer, including merged records of the same person, possibly same records, and possibly related records, (i.e. linked but unmerged customers).
@@ -137,10 +125,6 @@ Steps:
 customer and you get the **unified customer profile** with its source-labelled records and the CRM payload
 (tenure, segment, value). Right now every customer is a single CRM record and related-customer links are
 sparse - a clean baseline that comes alive in the next step.
-**Questions that may come up:**
-- *Can it query the SQLite file directly?* No - populate the app only from a Senzing data mart/SDK
-  (place-setting rule).
-- *Why only one customer's graph at a time?* The whole graph is impossible to appropriately visualize at scale - that's a hard rule.
 
 ---
 
@@ -153,13 +137,12 @@ master, and the flat profiles turn into true 360s. Its field names differ from t
 ```
 Goal: Add the online orders feed to the existing Senzing instance and re-resolve all data across both sources.
 
-
 Hard rules:
 - Use the Senzing MCP. Do not rely on general training.
 - Don't forget the previous Hard Rules.
 - Use the MCP mapping_workflow to map the data. Do not hand-code the JSON.
 - Register the data source as ONLINE_ORDERS. Multithread the load, complete file, no sleep/wakeups, and process all redo records.
-
+- I have provided online_orders.csv: it is attached to this chat, or in your working folder. Do not guess a path - ask me if you can't find it.
 
 Steps:
 1. Map and load online_orders.csv as data source ONLINE_ORDERS.
@@ -173,13 +156,6 @@ value** - one complete view from two systems that never shared a key. Net-new **
 appear (coverage the CRM never had). And the **related-customer** links fill in - records the engine
 flags as likely the same person (e.g. a former/maiden name) but didn't merge, surfaced as possible
 duplicates to review. The overview dashboard's cross-source and relationship numbers climb.
-**Questions that may come up:**
-- *Does it reload the CRM?* No - it resolves the new source against the master already loaded. That's
-  the cross-source magic (and why the Plus step is the interesting move).
-- *Why is a pair *related* instead of merged?* A shared address and first name but a different surname
-  (a maiden/former name), with no shared email, is strong but not conclusive - so the 360 links it as a
-  **possible duplicate** rather than silently merging. The *Season to taste* refinement below is how
-  you'd confirm a merge.
 
 ---
 
