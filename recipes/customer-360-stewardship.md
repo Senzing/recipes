@@ -1,3 +1,12 @@
+---
+title: Stewardship on CRM + Online Orders
+use_case: customer-360
+difficulty: Intermediate
+est_time: ~20m (clock time)
+video: https://drive.google.com/file/d/1j19nGlykBod8rPw-9m281bMTLCkGFACc/view?usp=sharing  # Google Drive (temp host - re-host on YouTube later)
+author: Clair Sullivan
+---
+
 # Stewardship on CRM + Online Orders
 
 **The mission:** add a stewardship queue to the Customer 360 app, surface what needs a human decision, show each candidate pair side by side, and let a human decide Merge or Don't merge.

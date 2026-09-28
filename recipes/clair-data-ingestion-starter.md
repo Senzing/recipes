@@ -1,3 +1,12 @@
+---
+title: Combine Data Sources & <strong>Explore Hidden Connections in PPP Loan Data</strong>
+use_case: foundational
+difficulty: Easy
+est_time: ~30m (clock time)
+video: https://youtu.be/SUQM4cKB2Hs
+author: Clair Sullivan
+---
+
 # Combine Data Sources & Explore Hidden Connections in PPP Loan Data
 
 **The mission:** find the entities that appear in **both** the PPP loans and labor-violations data, and identify which are physicians.

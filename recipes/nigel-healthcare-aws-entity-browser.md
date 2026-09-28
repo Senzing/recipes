@@ -1,3 +1,12 @@
+---
+title: Healthcare Exclusion Screening
+use_case: compliance
+difficulty: Advanced
+est_time: a few hours
+video: https://youtu.be/7z8HHvsPIJ0
+author: Nigel DeFreitas
+---
+
 # Healthcare Exclusion Screening
 
 **The mission:** screen Las Vegas healthcare providers against the OIG exclusion list and flag any that appear on it.
