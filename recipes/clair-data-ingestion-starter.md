@@ -3,7 +3,7 @@ title: Combine Data Sources & <strong>Explore Hidden Connections in PPP Loan Dat
 use_case: foundational
 difficulty: Easy
 est_time: ~30m (clock time)
-video: https://youtu.be/SUQM4cKB2Hs
+video: https://youtu.be/WaXKBA6gM1A
 author: Clair Sullivan
 ---
 
@@ -21,7 +21,7 @@ author: Clair Sullivan
 
 *6,390 records across PPP loans and DoL violations resolve to **4,937 entities** (**22.7% compression**), **90** of them spanning both sources - and any entity's records and relationships are explorable as a graph.*
 
-> ### ▶ [Watch the demo](https://youtu.be/SUQM4cKB2Hs)
+> ### ▶ [Watch the demo](https://youtu.be/WaXKBA6gM1A)
 
 > **Before you cook - a few reminders:**
 > - **Use your most capable model** (e.g. Opus for Claude), not a fast or cheap one - these recipes do real, multi-step work.
