@@ -11,8 +11,8 @@
 
 *223,886 provider records resolve to **174,468 entities**, **663** of them cross-source - browse, search, or filter to the **Excluded** ones flagged against the OIG list.*
 
-> ### ▶ [Watch the demo](https://drive.google.com/file/d/1jT0Ei6jhhpGUlPwfbEm2WwjHjy4dOXh3/view?usp=drive_link)
-> *"Senzing Cookbook: Excluded Las Vegas Doctors."* &nbsp;<sub>(Google Drive for now - to be re-hosted, e.g. YouTube.)</sub>
+> ### ▶ [Watch the demo](https://youtu.be/7z8HHvsPIJ0)
+> *"Senzing Cookbook: Excluded Las Vegas Doctors."*
 
 > **Before you cook - a few reminders:**
 > - **Use your most capable model** (e.g. Opus for Claude), not a fast or cheap one - these recipes do real, multi-step work.

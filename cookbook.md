@@ -8,7 +8,7 @@ You're the **chef**; the **sous-chef** is an AI assistant interpreting each prom
 
 > **First time?** Do the one-time [setup](getting-started.md) first - an AI coding assistant, the **Senzing MCP**, and a **Senzing license**. Do it once, then every recipe is just paste-and-cook.
 
-**Filter by** use case, difficulty, or kitchen.
+**Filter by** use case.
 
 ## The recipes
 

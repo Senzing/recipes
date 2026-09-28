@@ -75,7 +75,3 @@ Steps:
 ## Wrap Up
 
 In about 20 minutes you were able to add a functioning stewardship queue to the Customer 360 app, allowing a human to review possible matches and decide whether to merge or not. You can now explore the queue, filter by match key, and see the results of your decisions reflected in the data mart.
-
-## Changelog
-- 0.1.1 - Complete recipe update based on final video.
-- 0.1.0 - initial draft (starting with C360 already run).
