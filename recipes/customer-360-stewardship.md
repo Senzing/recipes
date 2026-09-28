@@ -3,7 +3,7 @@ title: Stewardship on CRM + Online Orders
 use_case: customer-360
 difficulty: Intermediate
 est_time: ~20m (clock time)
-video: https://drive.google.com/file/d/1j19nGlykBod8rPw-9m281bMTLCkGFACc/view?usp=sharing  # Google Drive (temp host - re-host on YouTube later)
+video: https://drive.google.com/file/d/1j19nGlykBod8rPw-9m281bMTLCkGFACc/view?usp=sharing
 author: Clair Sullivan
 ---
 
