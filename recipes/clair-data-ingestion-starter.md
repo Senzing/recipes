@@ -1,3 +1,12 @@
+---
+title: Combine Data Sources & <strong>Explore Hidden Connections in PPP Loan Data</strong>
+use_case: foundational
+difficulty: Easy
+est_time: ~30m (clock time)
+video: https://drive.google.com/file/d/1fIHxnZZT4fHzJltkvprDHNJCAOtx7LDa/view?usp=drive_link
+author: Clair Sullivan
+---
+
 # Combine Data Sources & Explore Hidden Connections in PPP Loan Data
 
 **The mission:** find the entities that appear in **both** the PPP loans and labor-violations data, and identify which are physicians.
@@ -12,7 +21,7 @@
 
 *6,390 records across PPP loans and DoL violations resolve to **4,937 entities** (**22.7% compression**), **90** of them spanning both sources - and any entity's records and relationships are explorable as a graph.*
 
-> ### ▶ [Watch the demo](https://youtu.be/SUQM4cKB2Hs)
+> ### ▶ [Watch the demo](https://drive.google.com/file/d/1fIHxnZZT4fHzJltkvprDHNJCAOtx7LDa/view?usp=drive_link)
 
 > **Before you cook - a few reminders:**
 > - **Use your most capable model** (e.g. Opus for Claude), not a fast or cheap one - these recipes do real, multi-step work.

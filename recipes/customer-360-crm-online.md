@@ -1,3 +1,12 @@
+---
+title: Customer 360 from CRM + Orders
+use_case: customer-360
+difficulty: Intermediate
+est_time: ~45m (clock time)
+video: https://drive.google.com/file/d/13GlgoZLQ4XbO7zd5hJvqkhQi-7v9mNXt/view?usp=drive_link
+author: Clair Sullivan
+---
+
 # Customer 360 from CRM + Orders
 
 **The mission:** resolve a CRM export and an online-orders feed into one unified, searchable view of each customer, and flag likely duplicates for review.
@@ -159,29 +168,9 @@ duplicates to review. The overview dashboard's cross-source and relationship num
 
 ---
 
-## Optional refinements
-
-- **Garnish the plate** (safe, presentation only) - turn on **"Why match?"** and **How** for a unified
-  customer to show the feature scores that merged their records (name family, matching email, shared
-  address), and use the related-customer graph to explore possible duplicates.
-- **Season to taste** (stewardship - merge/split) - when a *related* customer really is the same person
-  (a confirmed maiden-name change, say), a steward can **confirm the merge**, folding them into one
-  unified record across every view. Powerful and risky - **gate it**: confirm each merge/split before
-  it's written, never automatic.
-- **Living database** (optional) - add one new order for an existing customer (or a brand-new shopper)
-  and re-resolve; the 360 updates that customer's profile in place, no full reload. That's the database
-  working the way it would in production.
-
 ## Wrap Up
 
 In ~45 minutes you built a **Customer 360 database**: two mismatched source systems mapped and resolved
 into one unified customer each, served as an app with unified customer profiles, complete CRM-plus-online
 history, possible-duplicate review, search, and an overview dashboard. Swap in your own CRM and order data (mind the
 PII) and the same three moves - cook, serve, add - give you a 360 on real customers.
-
-## Changelog
-- 0.2.3 - link the demo video (Google Drive temp host; re-host to YouTube for publish).
-- 0.2.2 - updated all prompts to match the video.
-- 0.2.1 - terminology fix: the read-only Phase 1 profile is a **unified / consolidated view**, not a "golden record." A true golden record applies survivorship (best value per field) and is a later refinement. Grounded against `senzing-mcp:search_docs` (merge/purge survivorship = deciding which field values to keep) and industry MDM usage.
-- 0.2.0 - reframed from truth-set grading to building a customer 360 database (golden-record profiles, complete history, related/possible-duplicate review, dashboard, search).
-- 0.1.0 - initial draft (synthetic CRM + ONLINE_ORDERS with engineered overlap and ground-truth manifests).
