@@ -24,7 +24,8 @@
     "shellcheck",
     "stovetop",
     "Summerlin",
-    "wakeups"
+    "wakeups",
+    "watchlist"
   ],
   "ignorePaths": [
     ".git/**",
