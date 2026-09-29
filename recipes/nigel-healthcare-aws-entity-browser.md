@@ -46,7 +46,7 @@ all). The payoff was real: the exclusions overlay surfaced actual excluded Las V
 
 ## Cook: Ingest and load data
 
-**One prompt.** Map both sources, deploy the AWS pipeline, run ER, export. **The loader must be production-grade.**
+**One prompt.** Map both sources, deploy the AWS pipeline, run entity resolution, export. **The loader must be production-grade.**
 
 **Paste this into your AI assistant:**
 
@@ -135,8 +135,8 @@ real Nevada medical-fraud cases). The Entity Browser re-plates: **exclusion badg
 
 ## Wrap Up
 
-You built a **production** healthcare-provider compliance system on AWS - resolved repository,
-Entity Browser, and an OIG-exclusion overlay that surfaced real excluded providers - in hours, not
-months. This is a *restaurant*, not a one-time dinner: it keeps running.
+In a few hours you built a **production** healthcare-provider compliance system on AWS: a resolved
+provider repository, an Entity Browser over it, and an OIG-exclusion overlay that surfaced real
+excluded providers. Not a demo that stops when you close the laptop - it keeps running.
 
 **Next:** browse [the cookbook](../cookbook.md) for another use case.

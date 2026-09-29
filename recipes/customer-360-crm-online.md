@@ -2,7 +2,7 @@
 title: Customer 360 from CRM + Orders
 use_case: customer-360
 difficulty: Intermediate
-est_time: ~45m (clock time)
+est_time: ~45m
 video: https://drive.google.com/file/d/13GlgoZLQ4XbO7zd5hJvqkhQi-7v9mNXt/view?usp=drive_link
 author: Clair Sullivan
 ---

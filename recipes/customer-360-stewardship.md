@@ -2,7 +2,7 @@
 title: Stewardship on CRM + Online Orders
 use_case: customer-360
 difficulty: Intermediate
-est_time: ~20m (clock time)
+est_time: ~20m
 video: https://drive.google.com/file/d/1j19nGlykBod8rPw-9m281bMTLCkGFACc/view?usp=sharing
 author: Clair Sullivan
 ---
@@ -24,9 +24,9 @@ queues get wrong.
 
 ## Chef's Note
 
-In the Customer 360 (C360) recipe, we cooked up a handy little web app for exploring the ER results from two data sources - a CRM and a database of online orders. The app was useful for showing a variety of things, such as the basic ER statistics like compression ratio, which records were combined to form a single entity, and how different records were possibly related or possibly the same. But one thing this app did *not* have was a way to take action on any of that data.
+In the Customer 360 (C360) recipe, we cooked up a handy little web app for exploring the resolved results from two data sources - a CRM and a database of online orders. The app was useful for showing a variety of things, such as the basic resolution statistics like compression ratio, which records were combined to form a single entity, and how different records were possibly related or possibly the same. But one thing this app did *not* have was a way to take action on any of that data.
 
-It would be really helpful to surface certain results to a human for further review beyond Senzing's ER. For example, when two records are a possible match - the evidence points that way but does not settle it - Senzing surfaces the pair rather than deciding for you. It would be useful to show those two records side by side and let a human make the call. In other words, we are looking to add a data stewardship queue to our existing C360 app.
+It would be really helpful to surface certain results to a human for further review, beyond what Senzing resolves on its own. For example, when two records are a possible match - the evidence points that way but does not settle it - Senzing surfaces the pair rather than deciding for you. It would be useful to show those two records side by side and let a human make the call. In other words, we are looking to add a data stewardship queue to our existing C360 app.
 
 The good news is that a basic queue can be added with just a single prompt! Once you run it, you will have the ability to explore these possible matches sorted by Senzing's match key. Every user likely has a slightly different need and take on stewardship, but this basic functionality will allow you to quickly identify which match keys are most important to your business and which ones you want to focus on first. You can then refine the queue and the review screen to your heart's content.
 

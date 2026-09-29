@@ -2,7 +2,7 @@
 title: Find the Entities Hiding Across Your Data
 use_case: foundational
 difficulty: Easy
-est_time: ~30m (clock time)
+est_time: ~30m
 video: https://drive.google.com/file/d/1fIHxnZZT4fHzJltkvprDHNJCAOtx7LDa/view?usp=drive_link
 author: Clair Sullivan
 ---
@@ -76,7 +76,7 @@ Steps:
 counts, compression ratios, per-source summaries, entity-size distribution, and the **cross-source
 matches.** In my run, **92 entities were shared between PPP and DoL** - the cross-source connections.
 
-## Plate: Visualize the results (optional)
+## Plate: Visualize the results
 
 **One prompt.** Serve the result in the **Simple Web Visualizer** place setting. *(Optional - skip if the report alone answers your question.)*
 
