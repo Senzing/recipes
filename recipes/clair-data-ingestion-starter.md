@@ -137,6 +137,4 @@ In ~30 minutes and three prompts you stood up Senzing, resolved two (then three)
 merge report, and (optionally) a visualizer - the foundation for almost everything else in the
 cookbook. The same recipe works on *your* data: swap the CORDs and ask your own questions.
 
-**Next:** try the same idea on business systems with
-[Customer 360 from CRM + Orders](./customer-360-crm-online.md), or browse
-[the cookbook](../cookbook.md).
+**Next:** browse [the cookbook](../cookbook.md) for another use case.

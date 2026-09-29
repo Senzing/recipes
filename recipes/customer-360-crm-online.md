@@ -176,5 +176,4 @@ into one unified customer each, served as an app with unified customer profiles,
 history, possible-duplicate review, search, and an overview dashboard. Swap in your own CRM and order data (mind the
 PII) and the same three moves - cook, serve, add - give you a 360 on real customers.
 
-**Next:** [add stewardship screens](./customer-360-stewardship.md) so a person can settle the possible
-matches, or browse [the cookbook](../cookbook.md).
+**Next:** browse [the cookbook](../cookbook.md) for another use case.
