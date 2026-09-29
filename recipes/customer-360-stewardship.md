@@ -46,6 +46,7 @@ The good news is that a basic queue can be added with just a single prompt! Once
 - **Use your most capable model** (e.g. Opus for Claude), not a fast or cheap one - these recipes do real, multi-step work.
 - **Yours will look different.** Your assistant builds the result fresh each run, so the layout and features vary - a chart or the graph may sit on a different tab. The demo shows the idea, not an exact target.
 - **The video is illustrative** - it may show a different assistant or interface; the prompts on this page are what to follow.
+- **If something looks wrong, ask the assistant before starting over.** It built this and can inspect it. Say what you expected and what you got - "the dashboard shows 0 customers, check whether the load actually finished" - and tell it to verify against Senzing rather than guess. Paste any error in full.
 
 ## Cook: Build the stewardship queue
 
