@@ -9,24 +9,18 @@ author: Nigel DeFreitas
 
 # Healthcare Exclusion Screening
 
-**The mission:** screen Las Vegas healthcare providers against the OIG exclusion list and flag any that appear on it.
+**What you'll build:** the check that catches someone on a watchlist before you pay or hire them -
+screening that matches people rather than strings, because names never line up exactly. In this case
+every Las Vegas healthcare provider against the OIG exclusion list, built on AWS, every hit flagged.
+The penalties for missing one are federal.
 
-> *The meal.* Map two provider datasets, deploy an AWS pipeline, run Senzing V4 ER and export; serve
-> it in an Entity Browser; then add OIG LEIE exclusions and flag excluded providers. SE/advanced.
+**What it takes:** Advanced · a few hours once you're set up · runs in your own AWS account, **real charges**
 
-**The finished meal** - an Entity Browser over the resolved provider repository:
+![Entity Browser dashboard showing 174,468 providers built from 223,886 records, 663 of them appearing in both sources, 1.3 records each on average, with a searchable, filterable provider list](images/nigel-healthcare-aws-entity-browser-outcome.png)
 
-![Entity Browser dashboard showing 174,468 total entities, 223,886 total records, 663 cross-source, and 1.3 records per entity, with a searchable, filterable provider list](images/nigel-healthcare-aws-entity-browser-outcome.png)
+*223,886 provider records become **174,468 providers**, **663** of them appearing in both sources - browse, search, or filter straight to the **Excluded** ones flagged against the OIG list.*
 
-*223,886 provider records resolve to **174,468 entities**, **663** of them cross-source - browse, search, or filter to the **Excluded** ones flagged against the OIG list.*
-
-> ### ▶ [Watch the demo](https://youtu.be/7z8HHvsPIJ0)
-> *"Senzing Cookbook: Excluded Las Vegas Doctors."*
-
-> **Before you cook - a few reminders:**
-> - **Use your most capable model** (e.g. Opus for Claude), not a fast or cheap one - these recipes do real, multi-step work.
-> - **Yours will look different.** Your assistant builds the result fresh each run, so the layout and features vary - a chart or the graph may sit on a different tab. The demo shows the idea, not an exact target.
-> - **The video is illustrative** - it may show a different assistant or interface; the prompts on this page are what to follow.
+▶ **[Watch the demo](https://youtu.be/7z8HHvsPIJ0)** - *"Senzing Cookbook: Excluded Las Vegas Doctors."*
 
 ## Chef's Note
 
@@ -36,21 +30,25 @@ Clair's network-graph** idea for the place setting rather than reinvent it, and 
 load to last names starting "A"** to keep the walkthrough snappy (drop that filter to load them
 all). The payoff was real: the exclusions overlay surfaced actual excluded Las Vegas doctors.
 
-> ⚠️ **Not a quick live demo** - real AWS infra, hours of build time, real charges.
-
 ## Setup: What you'll need
 
 - **Setup (one-time):** an AI coding assistant, the **Senzing MCP**, and your **Senzing license** - new to this? Start with **[Get Started](../getting-started.md)**.
+- **Where it runs:** your own AWS account - production CDK/RDS/ECS/Glue/Step Functions, IAM via STS, AWS Docs MCP, creds. A substantial build that bills real charges while it runs.
 - **Attach your Senzing license file to the chat now** (or drop it in your assistant's working folder).
-- **AWS environment:** **production** - CDK/RDS/ECS/Glue/Step Functions, IAM via STS, AWS Docs MCP, creds. A substantial build.
 - **Ingredients:** **NPPES NPI** + **OpenData.org** (Las Vegas), pre-staged in
   `s3://npi-public-data-input-raw/`. *(the **Plus** step adds **OIG LEIE exclusions**.)*
 
----
+## Before you begin
+
+- **Use your most capable model** (e.g. Opus for Claude), not a fast or cheap one - these recipes do real, multi-step work.
+- **Yours will look different.** Your assistant builds the result fresh each run, so the layout and features vary - a chart or the graph may sit on a different tab. The demo shows the idea, not an exact target.
+- **The video is illustrative** - it may show a different assistant or interface; the prompts on this page are what to follow.
 
 ## Cook: Ingest and load data
 
-Map both sources, deploy the AWS pipeline, run ER, export. **The loader must be production-grade.** Paste:
+**One prompt.** Map both sources, deploy the AWS pipeline, run ER, export. **The loader must be production-grade.**
+
+**Paste this into your AI assistant:**
 
 ```
 Important: Use the Senzing MCP for all Senzing work. Use the AWS Documentation MCP for any AWS CDK questions.
@@ -83,11 +81,11 @@ Steps:
 continue. Then CDK stacks deploy, the pipeline loads with progress printed, the graph exports to S3,
 and a summary report prints. My run: **~223,000 records → ~174,000 entities; 663 cross-source overlaps.**
 
----
-
 ## Plate: Visualize the results
 
-Serve it in the **Entity Browser** place setting. Paste:
+**One prompt.** Serve it in the **Entity Browser** place setting.
+
+**Paste this into your AI assistant:**
 
 ```
 Important: Use the Senzing MCP's reporting_guide for this task.
@@ -110,11 +108,11 @@ Features:
 entities with **source-labeled** records; a labeled **network graph**; **"Why match?"** with feature
 scores for a selected pair.
 
----
-
 ## Plus: Add additional data
 
-Add the exclusions list; it re-resolves against the providers and the browser re-plates. Paste:
+**One prompt.** Add the exclusions list; it re-resolves against the providers and the browser re-plates.
+
+**Paste this into your AI assistant:**
 
 ```
 Important: Use the Senzing MCP for this task.
@@ -135,10 +133,10 @@ Steps:
 real Nevada medical-fraud cases). The Entity Browser re-plates: **exclusion badges**, an
 **exclusion-status filter**, **highlighted** OIG-linked nodes; updated stats print (individual vs. org).
 
----
-
 ## Wrap Up
 
 You built a **production** healthcare-provider compliance system on AWS - resolved repository,
 Entity Browser, and an OIG-exclusion overlay that surfaced real excluded providers - in hours, not
 months. This is a *restaurant*, not a one-time dinner: it keeps running.
+
+**Next:** browse [the cookbook](../cookbook.md) for another use case.

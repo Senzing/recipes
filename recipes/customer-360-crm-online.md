@@ -9,25 +9,19 @@ author: Clair Sullivan
 
 # Customer 360 from CRM + Orders
 
-**The mission:** resolve a CRM export and an online-orders feed into one unified, searchable view of each customer, and flag likely duplicates for review.
+**What you'll build:** a single view of your customers across data sources - one customer per person,
+with the complete order and account history no single system holds, duplicate review, and search. In
+this case a CRM export and an online-orders feed, where the same person is two customers: counted
+twice, half their history invisible, their real value anyone's guess. Afterwards, one profile each,
+plus the duplicates you did not know you had.
 
-> *The meal.* Build a **customer 360 database**: resolve a CRM export and an online-orders feed into one
-> unified customer per person, then serve it as a 360 app - unified customer profile, complete order and
-> account history, possible-duplicate review, and search. Intermediate, local kitchen, ~45 minutes.
+**What it takes:** Intermediate · ~45 min once you're set up · runs on your machine · two CSVs to download and attach
 
-**The finished meal** - one Customer 360 view built from two systems that never shared a key:
+![Customer 360 overview dashboard - 1,192 customers built from 1,579 records, 342 of them appearing in both CRM and online orders, and possible duplicates surfaced for review](images/customer-360-crm-online-outcome.png)
 
-![Customer 360 overview dashboard - 1,192 resolved customers, 1.325x records-to-customers compression, 342 customers spanning both CRM and online orders, and possible-duplicate pairs surfaced for review](images/customer-360-crm-online-outcome.png)
+*1,579 records become **1,192 customers**, **342** of them appearing in both CRM and online orders, and **177 possible duplicates** come up for review - the whole payoff on one landing page.*
 
-*1,579 records resolve to **1,192 customers** (**1.325× compression**), **342** span both CRM and online orders, and **177 possible-duplicate pairs** surface for review - the whole payoff on one landing page.*
-
-> ### ▶ [Watch the demo](https://drive.google.com/file/d/13GlgoZLQ4XbO7zd5hJvqkhQi-7v9mNXt/view?usp=drive_link)
-> *"Senzing Cookbook: Customer 360 from CRM + Orders."* &nbsp;<sub>(Google Drive for now - to be re-hosted, e.g. YouTube.)</sub>
-
-> **Before you cook - a few reminders:**
-> - **Use your most capable model** (e.g. Opus for Claude), not a fast or cheap one - these recipes do real, multi-step work.
-> - **Yours will look different.** Your assistant builds the result fresh each run, so the layout and features vary - a chart or the graph may sit on a different tab. The demo shows the idea, not an exact target.
-> - **The video is illustrative** - it may show a different assistant or interface; the prompts on this page are what to follow.
+▶ **[Watch the demo](https://drive.google.com/file/d/13GlgoZLQ4XbO7zd5hJvqkhQi-7v9mNXt/view?usp=drive_link)** - *"Senzing Cookbook: Customer 360 from CRM + Orders."*
 
 ## Chef's Note
 
@@ -41,6 +35,7 @@ There are two things worth calling out in this data. First, the two files **don'
 ## Setup: What you'll need
 
 - **Setup (one-time):** an AI coding assistant, the **Senzing MCP**, and your **Senzing license** - new to this? Start with **[Get Started](../getting-started.md)**.
+- **Where it runs:** the prompts stand Senzing up on your own machine. Edit them if you want it somewhere else.
 - **Attach your Senzing license file to the chat now** (or drop it in your assistant's working folder).
 - **Ingredients:** two synthetic source files in [`ingredients/customer360/`](../ingredients/customer360/) - download both, then **attach them to the chat now** (or drop them in your assistant's working folder):
   - **CRM** - `crm.csv`, ~1,000 customers (columnar CRM export: name, address, phone, email,
@@ -48,11 +43,18 @@ There are two things worth calling out in this data. First, the two files **don'
   - **ONLINE_ORDERS** - `online_orders.csv`, ~600 accounts (~400 are the same people as CRM
     customers; ~200 are online-only), with `order_count` / `last_order` as payload.
 
----
+## Before you begin
 
-## Prep: Stand up Senzing
+- **Use your most capable model** (e.g. Opus for Claude), not a fast or cheap one - these recipes do real, multi-step work.
+- **Yours will look different.** Your assistant builds the result fresh each run, so the layout and features vary - a chart or the graph may sit on a different tab. The demo shows the idea, not an exact target.
+- **The video is illustrative** - it may show a different assistant or interface; the prompts on this page are what to follow.
 
-Prepare your local machine to run Senzing. Paste:
+## Cook: Ingest and load data
+
+**Two prompts.** First stand up a local Senzing instance, then map, load and resolve the CRM export
+into the customer master your 360 is built on.
+
+**Paste this into your AI assistant:**
 
 ```
 Goal: Stand up a local Senzing instance, ready to load data.
@@ -66,10 +68,10 @@ Hard rules:
 
 **Expected outcome:** a local Senzing instance, ready to load data into SQLite.
 
-## Cook: Ingest and load data
+Now the CRM. Unlike a pre-mapped CORD this is a raw export, so **mapping is part of the cook** - let
+the MCP do it.
 
-Get the CRM data in first - mapped, loaded, resolved. It's the customer master your 360 is built on. Unlike a
-pre-mapped CORD, this is a raw export, so **mapping is part of the cook.** Let the MCP do it. Paste:
+**Then paste this:**
 
 ```
 Goal: Using the existing local Senzing instance, map, load, and resolve the CRM customer export into a customer master.
@@ -96,11 +98,11 @@ Steps:
 hangs off. On its own it's just profiles from a single system; the 360 fills in when you serve it (the Plate
 step) and add behavior + relationships (the Plus step).
 
----
-
 ## Plate: Visualize the results
 
-Serve the customer master through the **Entity Browser** place setting, stretched into a full 360 app. Paste:
+**One prompt.** Serve the customer master through the **Entity Browser** place setting, stretched into a full 360 app.
+
+**Paste this into your AI assistant:**
 
 ```
 Goal: Build a Customer 360 web app on the resolved data in the existing Senzing instance, giving one complete view per customer.
@@ -135,13 +137,13 @@ customer and you get the **unified customer profile** with its source-labelled r
 (tenure, segment, value). Right now every customer is a single CRM record and related-customer links are
 sparse - a clean baseline that comes alive in the next step.
 
----
-
 ## Plus: Add additional data
 
-Adding in a new data set of a completely different nature can be really challenging. Bring the orders feed to the table; Senzing re-resolves it against the customer
+**One prompt.** Adding in a new data set of a completely different nature can be really challenging. Bring the orders feed to the table; Senzing re-resolves it against the customer
 master, and the flat profiles turn into true 360s. Its field names differ from the CRM - that's fine, the
-`mapping_workflow` reconciles them. Paste:
+`mapping_workflow` reconciles them.
+
+**Paste this into your AI assistant:**
 
 ```
 Goal: Add the online orders feed to the existing Senzing instance and re-resolve all data across both sources.
@@ -166,11 +168,12 @@ appear (coverage the CRM never had). And the **related-customer** links fill in 
 flags as likely the same person (e.g. a former/maiden name) but didn't merge, surfaced as possible
 duplicates to review. The overview dashboard's cross-source and relationship numbers climb.
 
----
-
 ## Wrap Up
 
 In ~45 minutes you built a **Customer 360 database**: two mismatched source systems mapped and resolved
 into one unified customer each, served as an app with unified customer profiles, complete CRM-plus-online
 history, possible-duplicate review, search, and an overview dashboard. Swap in your own CRM and order data (mind the
 PII) and the same three moves - cook, serve, add - give you a 360 on real customers.
+
+**Next:** [add stewardship screens](./customer-360-stewardship.md) so a person can settle the possible
+matches, or browse [the cookbook](../cookbook.md).

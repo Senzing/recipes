@@ -1,5 +1,5 @@
 ---
-title: Combine Data Sources & <strong>Explore Hidden Connections in PPP Loan Data</strong>
+title: Find the Entities Hiding Across Your Data
 use_case: foundational
 difficulty: Easy
 est_time: ~30m (clock time)
@@ -7,26 +7,20 @@ video: https://drive.google.com/file/d/1fIHxnZZT4fHzJltkvprDHNJCAOtx7LDa/view?us
 author: Clair Sullivan
 ---
 
-# Combine Data Sources & Explore Hidden Connections in PPP Loan Data
+# Find the Entities Hiding Across Your Data
 
-**The mission:** find the entities that appear in **both** the PPP loans and labor-violations data, and identify which are physicians.
+**What you'll build:** a single view of the entities across separate data sources - and with it, the
+connections nobody could see before. In this case PPP relief loans and Department of Labor
+violations: the businesses that appear in both, and which of those are physicians. The two sources
+share no common key. Names and addresses are enough.
 
-> *The meal.* With **three plain-English prompts**: ingest two public data snapshots and get a
-> merge report; (optionally) serve it up in a web visualizer; then fold in a third dataset and
-> refresh. ~30 minutes, local kitchen. The beginner on-ramp for the whole cookbook.
+**What it takes:** Easy · ~30 min once you're set up · runs on your machine · no data to find, the MCP supplies it
 
-**The finished meal** - an interactive dashboard over the resolved PPP-loan and labor-violation data:
+![Senzing dashboard for the combined PPP and labor-violation data: 6,390 records grouped into 4,937 businesses and people, 90 of them appearing in both sources, with charts by source and by records per group, a list of the multi-record ones, and a connection graph for a selected one](images/clair-data-ingestion-starter-outcome.png)
 
-![Senzing ER dashboard: 6,390 records resolved to 4,937 entities, 90 cross-source, 22.7% compression, with entities-by-source and records-per-entity charts, a multi-record entity list, and a network graph for a selected entity](images/clair-data-ingestion-starter-outcome.png)
+*6,390 records across PPP loans and DoL violations become **4,937 businesses and people**, **90** of them appearing in both sources - and you can open any one of them to see its records and connections.*
 
-*6,390 records across PPP loans and DoL violations resolve to **4,937 entities** (**22.7% compression**), **90** of them spanning both sources - and any entity's records and relationships are explorable as a graph.*
-
-> ### ▶ [Watch the demo](https://drive.google.com/file/d/1fIHxnZZT4fHzJltkvprDHNJCAOtx7LDa/view?usp=drive_link)
-
-> **Before you cook - a few reminders:**
-> - **Use your most capable model** (e.g. Opus for Claude), not a fast or cheap one - these recipes do real, multi-step work.
-> - **Yours will look different.** Your assistant builds the result fresh each run, so the layout and features vary - a chart or the graph may sit on a different tab. The demo shows the idea, not an exact target.
-> - **The video is illustrative** - it may show a different assistant or interface; the prompts on this page are what to follow.
+▶ **[Watch the demo](https://drive.google.com/file/d/1fIHxnZZT4fHzJltkvprDHNJCAOtx7LDa/view?usp=drive_link)** - *"Senzing Cookbook: Find the Entities Hiding Across Your Data."*
 
 ## Chef's Note
 
@@ -41,15 +35,22 @@ the how. Cook it on your own data by swapping the CORDs for your sources.
 ## Setup: What you'll need
 
 - **Setup (one-time):** an AI coding assistant, the **Senzing MCP**, and your **Senzing license** - new to this? Start with **[Get Started](../getting-started.md)**.
+- **Where it runs:** the prompts stand Senzing up on your own machine. Edit them if you want it somewhere else.
 - **Attach your Senzing license file to the chat now** (or drop it in your assistant's working folder).
 - **Ingredients:** **PPP Loans** + **US Labor Violations** (Dept. of Labor), both Las Vegas CORD
   sources - the MCP supplies them. *(the **Plus** step adds **NPI**.)*
 
----
+## Before you begin
+
+- **Use your most capable model** (e.g. Opus for Claude), not a fast or cheap one - these recipes do real, multi-step work.
+- **Yours will look different.** Your assistant builds the result fresh each run, so the layout and features vary - a chart or the graph may sit on a different tab. The demo shows the idea, not an exact target.
+- **The video is illustrative** - it may show a different assistant or interface; the prompts on this page are what to follow.
 
 ## Cook: Ingest and load data
 
-Map + load both sources and resolve them. **This is the loader** - cook it properly. Paste:
+**One prompt.** Map + load both sources and resolve them. **This is the loader** - cook it properly.
+
+**Paste this into your AI assistant:**
 
 ```
 Goal: Stand up Senzing, load in 2 pre-mapped datasets and generate a merge report.
@@ -75,11 +76,11 @@ Steps:
 counts, compression ratios, per-source summaries, entity-size distribution, and the **cross-source
 matches.** In my run, **92 entities were shared between PPP and DoL** - the cross-source connections.
 
----
-
 ## Plate: Visualize the results (optional)
 
-Serve the result in the **Simple Web Visualizer** place setting. *(Optional - skip if the report alone answers your question.)* Paste:
+**One prompt.** Serve the result in the **Simple Web Visualizer** place setting. *(Optional - skip if the report alone answers your question.)*
+
+**Paste this into your AI assistant:**
 
 ```
 Goal: Utilizing the data already loaded into Senzing, create an interactive web visualizer including a summary dashboard and the ability to explore entities, including a network graph.
@@ -106,11 +107,11 @@ Features:
 breakdown, **search**, and a **network graph** rendered for a selected entity (with a legend),
 cross-source entities at the top.
 
----
-
 ## Plus: Add additional data
 
-Bring a third source to the table; it resolves together with the rest (cross-source) and re-plates. Paste:
+**One prompt.** Bring a third source to the table; it resolves together with the rest (cross-source) and re-plates.
+
+**Paste this into your AI assistant:**
 
 ```
 Goal: Add one more data source to Senzing and update the visualization.
@@ -129,10 +130,12 @@ Steps:
 entities** appear - records resolving across all three (which providers took PPP loans *and* had
 violations). The visualizer's legend gains NPI and new nodes show up.
 
----
-
 ## Wrap Up
 
 In ~30 minutes and three prompts you stood up Senzing, resolved two (then three) sources, produced a
 merge report, and (optionally) a visualizer - the foundation for almost everything else in the
 cookbook. The same recipe works on *your* data: swap the CORDs and ask your own questions.
+
+**Next:** try the same idea on business systems with
+[Customer 360 from CRM + Orders](./customer-360-crm-online.md), or browse
+[the cookbook](../cookbook.md).
