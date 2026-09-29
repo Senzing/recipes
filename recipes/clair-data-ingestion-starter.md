@@ -11,8 +11,8 @@ author: Clair Sullivan
 
 **What you'll build:** a single view of the entities across separate data sources - and with it, the
 connections nobody could see before. In this case PPP relief loans and Department of Labor
-violations: the businesses that appear in both, and which of those are physicians. The two sources
-share no common key. Names and addresses are enough.
+violations, with a third folded in later: the businesses that appear in more than one, and which of
+those are physicians. None of these sources share a common key. Names and addresses are enough.
 
 **What it takes:** Easy · ~30 min once you're set up · runs on your machine · no data to find, the MCP supplies it
 

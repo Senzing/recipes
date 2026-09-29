@@ -17,7 +17,7 @@ Your result won't look identical to the demo - the assistant builds it fresh eac
 ### [Find the Entities Hiding Across Your Data](recipes/clair-data-ingestion-starter.md)
 *Foundational · Easy · Local · ~30m · Clair Sullivan*
 
-**What you'll build:** a single view of the entities across separate data sources - and with it, the connections nobody could see before. In this case PPP relief loans and Department of Labor violations: the businesses that appear in both, and which of those are physicians.
+**What you'll build:** a single view of the entities across separate data sources - and with it, the connections nobody could see before. In this case PPP relief loans, Department of Labor violations and a third set folded in later: the businesses that appear in more than one, and which of those are physicians.
 
 ### [Customer 360 from CRM + Orders](recipes/customer-360-crm-online.md)
 *Customer 360 · Intermediate · Local · ~45m · Clair Sullivan*
