@@ -49,7 +49,7 @@ the how. Cook it on your own data by swapping the CORDs for your sources.
 
 ## Cook: Ingest and load data
 
-**One prompt.** Map + load both sources and resolve them. **This is the loader** - cook it properly.
+**One prompt.** Map both sources, load them, and resolve them into one set of entities. It runs for a few minutes and prints progress as it goes.
 
 **Paste this into your AI assistant:**
 
@@ -79,7 +79,7 @@ matches.** In my run, **92 entities were shared between PPP and DoL** - the cros
 
 ## Plate: Visualize the results
 
-**One prompt.** Serve the result in the **Simple Web Visualizer** place setting. *(Optional - skip if the report alone answers your question.)*
+**One prompt.** Serve the result as a simple web app: a dashboard, search, and a graph for whichever entity you pick. *(Optional - skip it if the merge report already answers your question.)*
 
 **Paste this into your AI assistant:**
 
@@ -110,7 +110,7 @@ cross-source entities at the top.
 
 ## Plus: Add additional data
 
-**One prompt.** Bring a third source to the table; it resolves together with the rest (cross-source) and re-plates.
+**One prompt.** Bring a third source. It resolves against what is already loaded, and the report and the visualizer pick it up.
 
 **Paste this into your AI assistant:**
 

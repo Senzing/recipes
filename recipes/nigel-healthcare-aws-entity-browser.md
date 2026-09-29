@@ -26,7 +26,7 @@ The penalties for missing one are federal.
 
 I built this in a real **AWS production kitchen**, not a laptop - the goal was an operational
 compliance system that keeps running, not a one-off demo. A couple of liberties: I **borrowed
-Clair's network-graph** idea for the place setting rather than reinvent it, and I **limited the OIG
+Clair's network-graph** idea rather than reinvent it, and I **limited the OIG
 load to last names starting "A"** to keep the walkthrough snappy (drop that filter to load them
 all). The payoff was real: the exclusions overlay surfaced actual excluded Las Vegas doctors.
 
@@ -47,7 +47,7 @@ all). The payoff was real: the exclusions overlay surfaced actual excluded Las V
 
 ## Cook: Ingest and load data
 
-**One prompt.** Map both sources, deploy the AWS pipeline, run entity resolution, export. **The loader must be production-grade.**
+**One prompt.** Map both sources, deploy the AWS pipeline, run entity resolution, export. This is the long one: CDK stacks go up, the load runs for a while, and it pauses part-way for you to approve the mappings.
 
 **Paste this into your AI assistant:**
 
@@ -84,7 +84,7 @@ and a summary report prints. My run: **~223,000 records → ~174,000 entities; 6
 
 ## Plate: Visualize the results
 
-**One prompt.** Serve it in the **Entity Browser** place setting.
+**One prompt.** Serve it as an Entity Browser: search, source labels, a graph, and why any two records matched.
 
 **Paste this into your AI assistant:**
 
@@ -111,7 +111,7 @@ scores for a selected pair.
 
 ## Plus: Add additional data
 
-**One prompt.** Add the exclusions list; it re-resolves against the providers and the browser re-plates.
+**One prompt.** Add the exclusions list. It re-resolves against the providers already loaded, and the browser updates.
 
 **Paste this into your AI assistant:**
 
@@ -131,7 +131,7 @@ Steps:
 
 **Expected outcome:** OIG records load and **re-resolve** against the existing providers, surfacing
 **excluded doctors** (the video found **Victor C. Sutton** and **Everton's Place**, both tied to
-real Nevada medical-fraud cases). The Entity Browser re-plates: **exclusion badges**, an
+real Nevada medical-fraud cases). The Entity Browser updates: **exclusion badges**, an
 **exclusion-status filter**, **highlighted** OIG-linked nodes; updated stats print (individual vs. org).
 
 ## Wrap Up

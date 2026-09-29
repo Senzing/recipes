@@ -30,7 +30,7 @@ customer, pulled together from every system that knows them. The hard part typic
 knows *Ed Flores, six orders, ships to Summerlin*. They are the same people but nothing in the data joins them. That's the gap
 entity resolution closes, and this recipe builds the whole thing on top of it.
 
-There are two things worth calling out in this data. First, the two files **don't share field names.** The CRM has already split things out into `first_name` and `last_name` plus a `zip`, while the orders feed hands you a single `customer_name` to break apart, a set of `ship_*` address fields, and a `contact_phone` that's formatted completely differently. That mismatch is on purpose...mapping all of it over to the Senzing spec is part of the recipe, and the MCP's `mapping_workflow` handles that piece for you. And here's a fun wrinkle...the orders feed has no birthdate at all, because an online store wouldn't ever ask for one. So a shared email ends up being the thing that carries a customer across something like a move. Second, I served the whole thing through the **Entity Browser** place setting we set up below, stretched into a full Customer 360 app that shows useful things like each customer's profile, activity, related-customer review, and an overview dashboard.
+There are two things worth calling out in this data. First, the two files **don't share field names.** The CRM has already split things out into `first_name` and `last_name` plus a `zip`, while the orders feed hands you a single `customer_name` to break apart, a set of `ship_*` address fields, and a `contact_phone` that's formatted completely differently. That mismatch is on purpose...mapping all of it over to the Senzing spec is part of the recipe, and the MCP's `mapping_workflow` handles that piece for you. And here's a fun wrinkle...the orders feed has no birthdate at all, because an online store wouldn't ever ask for one. So a shared email ends up being the thing that carries a customer across something like a move. Second, I served the whole thing through the **Entity Browser** we set up below, stretched into a full Customer 360 app that shows useful things like each customer's profile, activity, related-customer review, and an overview dashboard.
 
 ## Setup: What you'll need
 
@@ -69,7 +69,7 @@ Hard rules:
 
 **Expected outcome:** a local Senzing instance, ready to load data into SQLite.
 
-Now the CRM. Unlike a pre-mapped CORD this is a raw export, so **mapping is part of the cook** - let
+Now the CRM. Unlike a pre-mapped CORD this is a raw export, so **mapping is part of this step** - let
 the MCP do it.
 
 **Then paste this:**
@@ -101,7 +101,7 @@ step) and add behavior + relationships (the Plus step).
 
 ## Plate: Visualize the results
 
-**One prompt.** Serve the customer master through the **Entity Browser** place setting, stretched into a full 360 app.
+**One prompt.** Serve the customer master as the 360 app itself: a profile per customer, their full history, duplicate review, and search.
 
 **Paste this into your AI assistant:**
 
