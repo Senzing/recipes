@@ -1,5 +1,5 @@
 ---
-title: Stewardship on CRM + Online Orders
+title: Customer 360 from CRM + Orders (part 2 - stewardship app)
 use_case: customer-360
 difficulty: Intermediate
 est_time: ~20m
@@ -7,24 +7,24 @@ video: https://drive.google.com/file/d/1j19nGlykBod8rPw-9m281bMTLCkGFACc/view?us
 author: Clair Sullivan
 ---
 
-# Stewardship on CRM + Online Orders
+# Customer 360 from CRM + Orders (part 2 - stewardship app)
 
 **What you'll build:** add stewardship screens to the Customer 360 app you just built - where a
 person makes the calls that need human judgment. In this case the possible matches Senzing surfaces
 for review: each pair side by side, merged or kept apart, recorded with who decided and when. The verdict is written back so it survives the next reload, which is the part home-grown
 queues get wrong.
 
-**What it takes:** Intermediate · ~20 min once you're set up · runs on your machine · do [Customer 360](./customer-360-crm-online.md) first
+**What it takes:** Intermediate · ~20 min once you're set up · runs on your machine · Prerequisite: [Customer 360 from CRM + Orders](./customer-360-crm-online.md)
 
 ![The Customer 360 app's new Stewardship queue tab: candidate pairs grouped by what they have in common, each with a status and a review link](images/customer-360-stewardship-outcome.png)
 
 *From here a person works through the possible matches - the pairs that call for a human decision - and says which are really the same customer.*
 
-▶ **[Watch the demo](https://drive.google.com/file/d/1j19nGlykBod8rPw-9m281bMTLCkGFACc/view?usp=sharing)** - *"Senzing Cookbook: Stewardship on CRM + Online Orders."*
+▶ **[Watch the demo](https://drive.google.com/file/d/1j19nGlykBod8rPw-9m281bMTLCkGFACc/view?usp=sharing)** - *"Senzing Cookbook: Customer 360 from CRM + Orders (part 2 - stewardship app)."*
 
 ## Chef's Note
 
-In the Customer 360 (C360) recipe, we cooked up a handy little web app for exploring the resolved results from two data sources - a CRM and a database of online orders. The app was useful for showing a variety of things, such as the basic resolution statistics like compression ratio, which records were combined to form a single entity, and how different records were possibly related or possibly the same. But one thing this app did *not* have was a way to take action on any of that data.
+In the 'Customer 360 from CRM + Orders' recipe, we cooked up a handy little web app for exploring the resolved results from two data sources - a CRM and a database of online orders. The app was useful for showing a variety of things, such as the basic resolution statistics like compression ratio, which records were combined to form a single entity, and how different records were possibly related or possibly the same. But one thing this app did *not* have was a way to take action on any of that data.
 
 It would be really helpful to surface certain results to a human for further review, beyond what Senzing resolves on its own. For example, when two records are a possible match - the evidence points that way but does not settle it - Senzing surfaces the pair rather than deciding for you. It would be useful to show those two records side by side and let a human make the call. In other words, we are looking to add a data stewardship queue to our existing C360 app.
 

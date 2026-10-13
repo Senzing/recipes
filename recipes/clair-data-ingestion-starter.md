@@ -1,26 +1,26 @@
 ---
-title: Find the Entities Hiding Across Your Data
+title: Find the Entities Hiding Across The Data
 use_case: foundational
-difficulty: Easy
+difficulty: Beginner
 est_time: ~30m
 video: https://drive.google.com/file/d/1fIHxnZZT4fHzJltkvprDHNJCAOtx7LDa/view?usp=drive_link
 author: Clair Sullivan
 ---
 
-# Find the Entities Hiding Across Your Data
+# Find the Entities Hiding Across The Data
 
 **What you'll build:** a single view of the entities across separate data sources - and with it, the
 connections nobody could see before. In this case PPP relief loans and Department of Labor
 violations, with a third folded in later: the businesses that appear in more than one, and which of
 those are physicians. None of these sources share a common key. Names and addresses are enough.
 
-**What it takes:** Easy · ~30 min once you're set up · runs on your machine · no data to find, the MCP supplies it
+**What it takes:** Beginner · ~30 min once you're set up · runs on your machine · no data to find, the MCP supplies it
 
 ![Senzing dashboard for the combined PPP and labor-violation data: 6,390 records grouped into 4,937 businesses and people, 90 of them appearing in both sources, with charts by source and by records per group, a list of the multi-record ones, and a connection graph for a selected one](images/clair-data-ingestion-starter-outcome.png)
 
 *6,390 records across PPP loans and DoL violations become **4,937 businesses and people**, **90** of them appearing in both sources - and you can open any one of them to see its records and connections.*
 
-▶ **[Watch the demo](https://drive.google.com/file/d/1fIHxnZZT4fHzJltkvprDHNJCAOtx7LDa/view?usp=drive_link)** - *"Senzing Cookbook: Find the Entities Hiding Across Your Data."*
+▶ **[Watch the demo](https://drive.google.com/file/d/1fIHxnZZT4fHzJltkvprDHNJCAOtx7LDa/view?usp=drive_link)** - *"Senzing Cookbook: Find the Entities Hiding Across The Data."*
 
 ## Chef's Note
 
@@ -37,7 +37,7 @@ the how. Cook it on your own data by swapping the CORDs for your sources.
 - **Setup (one-time):** an AI coding assistant, the **Senzing MCP**, and your **Senzing license** - new to this? Start with **[Get Started](../getting-started.md)**.
 - **Where it runs:** the prompts stand Senzing up on your own machine. Edit them if you want it somewhere else.
 - **Attach your Senzing license file to the chat now** (or drop it in your assistant's working folder).
-- **Ingredients:** **PPP Loans** + **US Labor Violations** (Dept. of Labor), both Las Vegas CORD
+- **Ingredients:** **PPP Loans (Paycheck Protection Program)** + **US Labor Violations** (Dept. of Labor), both Las Vegas CORD
   sources - the MCP supplies them. *(the **Plus** step adds **NPI**.)*
 
 ## Before you begin
