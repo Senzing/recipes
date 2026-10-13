@@ -3,7 +3,7 @@ title: Customer 360 from CRM + Orders (part 1 - setup)
 use_case: customer-360
 difficulty: Intermediate
 est_time: ~45m
-video: https://drive.google.com/file/d/13GlgoZLQ4XbO7zd5hJvqkhQi-7v9mNXt/view?usp=drive_link
+video: https://youtu.be/jq5x8Rtrxnc
 author: Clair Sullivan
 ---
 
@@ -21,7 +21,7 @@ plus the duplicates you did not know you had.
 
 *1,579 records become **1,192 customers**, **342** of them appearing in both CRM and online orders, and **177 possible duplicates** come up for review - the whole payoff on one landing page.*
 
-▶ **[Watch the demo](https://drive.google.com/file/d/13GlgoZLQ4XbO7zd5hJvqkhQi-7v9mNXt/view?usp=drive_link)** - *"Senzing Cookbook: Customer 360 from CRM + Orders (part 1 - setup)."*
+▶ **[Watch the demo](https://youtu.be/jq5x8Rtrxnc)** - *"Senzing Cookbook: Customer 360 from CRM + Orders (part 1 - setup)."*
 
 ## Chef's Note
 

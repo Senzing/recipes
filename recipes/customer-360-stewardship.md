@@ -3,7 +3,7 @@ title: Customer 360 from CRM + Orders (part 2 - stewardship app)
 use_case: customer-360
 difficulty: Intermediate
 est_time: ~20m
-video: https://drive.google.com/file/d/1j19nGlykBod8rPw-9m281bMTLCkGFACc/view?usp=sharing
+video: https://youtu.be/EJF2Vh95294
 author: Clair Sullivan
 ---
 
@@ -20,7 +20,7 @@ queues get wrong.
 
 *From here a person works through the possible matches - the pairs that call for a human decision - and says which are really the same customer.*
 
-▶ **[Watch the demo](https://drive.google.com/file/d/1j19nGlykBod8rPw-9m281bMTLCkGFACc/view?usp=sharing)** - *"Senzing Cookbook: Customer 360 from CRM + Orders (part 2 - stewardship app)."*
+▶ **[Watch the demo](https://youtu.be/EJF2Vh95294)** - *"Senzing Cookbook: Customer 360 from CRM + Orders (part 2 - stewardship app)."*
 
 ## Chef's Note
 
