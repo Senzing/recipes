@@ -10,21 +10,27 @@ Your result won't look identical to the demo - the assistant builds it fresh eac
 
 > **First time?** Do the one-time [setup](getting-started.md) - an AI coding assistant, the **Senzing MCP**, and a free **Senzing license**. Once. After that, every recipe is paste-and-go.
 
-**Levels:** **Easy** needs nothing but the one-time setup. **Intermediate** adds data files to attach, or an earlier recipe first. **Advanced** means production infrastructure and real cloud charges. Every recipe says what it takes at the top.
+**Levels:**
+
+- **Beginner** needs nothing but the one-time setup.
+- **Intermediate** adds data files to attach, or an earlier recipe first.
+- **Advanced** means production infrastructure and real cloud charges.
+
+Every recipe says what it takes at the top.
 
 ## The recipes
 
-### [Find the Entities Hiding Across Your Data](recipes/clair-data-ingestion-starter.md)
-*Foundational · Easy · Local · ~30m · Clair Sullivan*
+### [Find the Entities Hiding Across The Data](recipes/clair-data-ingestion-starter.md)
+*Foundational · Beginner · Local · ~30m · Clair Sullivan*
 
 **What you'll build:** a single view of the entities across separate data sources - and with it, the connections nobody could see before. In this case PPP relief loans, Department of Labor violations and a third set folded in later: the businesses that appear in more than one, and which of those are physicians.
 
-### [Customer 360 from CRM + Orders](recipes/customer-360-crm-online.md)
+### [Customer 360 from CRM + Orders (part 1 - setup)](recipes/customer-360-crm-online.md)
 *Customer 360 · Intermediate · Local · ~45m · Clair Sullivan*
 
-**What you'll build:** a single view of your customers across data sources - one customer per person, with the complete order and account history no single system holds, duplicate review, and search. In this case a CRM export and an online-orders feed, where the same person is two customers.
+**What you'll build:** a single view of customers across data sources - one customer per person, with the complete order and account history no single system holds, duplicate review, and search. In this case a CRM export and an online-orders feed, where the same person is two customers.
 
-### [Stewardship on CRM + Online Orders](recipes/customer-360-stewardship.md)
+### [Customer 360 from CRM + Orders (part 2 - stewardship app)](recipes/customer-360-stewardship.md)
 *Customer 360 · Intermediate · Local · ~20m · Clair Sullivan*
 
 **What you'll build:** add stewardship screens to the Customer 360 app - where a person makes the calls that need human judgment, with each verdict recorded and surviving the next reload. Do the Customer 360 recipe first.
