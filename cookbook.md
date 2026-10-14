@@ -25,12 +25,12 @@ Every recipe says what it takes at the top.
 
 **What you'll build:** a single view of the entities across separate data sources - and with it, the connections nobody could see before. In this case PPP relief loans, Department of Labor violations and a third set folded in later: the businesses that appear in more than one, and which of those are physicians.
 
-### [Customer 360 from CRM + Orders (part 1 - setup)](recipes/customer-360-crm-online.md)
+### [Customer 360 from CRM + Orders (part 1)](recipes/customer-360-crm-online.md)
 *Customer 360 · Intermediate · Local · ~45m · Clair Sullivan*
 
 **What you'll build:** a single view of customers across data sources - one customer per person, with the complete order and account history no single system holds, duplicate review, and search. In this case a CRM export and an online-orders feed, where the same person is two customers.
 
-### [Customer 360 from CRM + Orders (part 2 - stewardship app)](recipes/customer-360-stewardship.md)
+### [Customer 360 from CRM + Orders (part 2)](recipes/customer-360-stewardship.md)
 *Customer 360 · Intermediate · Local · ~20m · Clair Sullivan*
 
 **What you'll build:** add stewardship screens to the Customer 360 app - where a person makes the calls that need human judgment, with each verdict recorded and surviving the next reload. Do the Customer 360 recipe first.
