@@ -1,5 +1,5 @@
 ---
-title: Find the Entities Hiding Across The Data
+title: Combine Data & Explore Hidden Connections in PPP Loan Data
 use_case: foundational
 difficulty: Beginner
 est_time: ~30m
@@ -7,7 +7,7 @@ video: https://youtu.be/S1jq34SD5pE
 author: Clair Sullivan
 ---
 
-# Find the Entities Hiding Across The Data
+# Combine Data & Explore Hidden Connections in PPP Loan Data
 
 **What you'll build:** a single view of the entities across separate data sources - and with it, the
 connections nobody could see before. In this case PPP relief loans and Department of Labor
@@ -20,7 +20,7 @@ those are physicians. None of these sources share a common key. Names and addres
 
 *6,390 records across PPP loans and DoL violations become **4,937 businesses and people**, **90** of them appearing in both sources - and you can open any one of them to see its records and connections.*
 
-▶ **[Watch the demo](https://youtu.be/S1jq34SD5pE)** - *"Senzing Cookbook: Find the Entities Hiding Across The Data."*
+▶ **[Watch the demo](https://youtu.be/S1jq34SD5pE)** - *"Senzing Cookbook: Combine Data & Explore Hidden Connections in PPP Loan Data."*
 
 ## Chef's Note
 
