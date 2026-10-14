@@ -20,7 +20,7 @@ Every recipe says what it takes at the top. Times are elapsed, start to finish, 
 
 ## The recipes
 
-### [Find the Entities Hiding Across The Data](recipes/clair-data-ingestion-starter.md)
+### [Combine Data & Explore Hidden Connections in PPP Loan Data](recipes/clair-data-ingestion-starter.md)
 *Foundational · Beginner · Local · ~30m · Clair Sullivan*
 
 **What you'll build:** a single view of the entities across separate data sources - and with it, the connections nobody could see before. In this case PPP relief loans, Department of Labor violations and a third set folded in later: the businesses that appear in more than one, and which of those are physicians.
