@@ -1,5 +1,5 @@
 ---
-title: Customer 360 from CRM + Orders (part 2 - stewardship app)
+title: Customer 360 from CRM + Orders (part 2)
 use_case: customer-360
 difficulty: Intermediate
 est_time: ~20m
@@ -7,7 +7,7 @@ video: https://youtu.be/EJF2Vh95294
 author: Clair Sullivan
 ---
 
-# Customer 360 from CRM + Orders (part 2 - stewardship app)
+# Customer 360 from CRM + Orders (part 2)
 
 **What you'll build:** add stewardship screens to the Customer 360 app you just built - where a
 person makes the calls that need human judgment. In this case the possible matches Senzing surfaces
@@ -20,7 +20,7 @@ queues get wrong.
 
 *From here a person works through the possible matches - the pairs that call for a human decision - and says which are really the same customer.*
 
-▶ **[Watch the demo](https://youtu.be/EJF2Vh95294)** - *"Senzing Cookbook: Customer 360 from CRM + Orders (part 2 - stewardship app)."*
+▶ **[Watch the demo](https://youtu.be/EJF2Vh95294)** - *"Senzing Cookbook: Customer 360 from CRM + Orders (part 2)."*
 
 ## Chef's Note
 

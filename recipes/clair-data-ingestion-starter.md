@@ -37,7 +37,7 @@ the how. Cook it on your own data by swapping the CORDs for your sources.
 - **Setup (one-time):** an AI coding assistant, the **Senzing MCP**, and your **Senzing license** - new to this? Start with **[Get Started](../getting-started.md)**.
 - **Where it runs:** the prompts stand Senzing up on your own machine. Edit them if you want it somewhere else.
 - **Attach your Senzing license file to the chat now** (or drop it in your assistant's working folder).
-- **Ingredients:** **PPP Loans (Paycheck Protection Program)** + **US Labor Violations** (Dept. of Labor), both Las Vegas CORD
+- **Ingredients:** **PPP Loans** (Paycheck Protection Program) + **US Labor Violations** (Dept. of Labor), both Las Vegas CORD
   sources - the MCP supplies them. *(the **Plus** step adds **NPI**.)*
 
 ## Before you begin
