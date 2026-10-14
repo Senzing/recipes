@@ -1,6 +1,6 @@
 # The Senzing Cookbook
 
-**Working entity resolution demos you can build yourself this afternoon.**
+**Identity intelligence, hands-on: entity resolution demos you can build yourself this afternoon.**
 
 Every recipe solves a real use case - hidden connections across datasets, a customer 360, compliance screening - and leaves you with a running application, not a slide about one. You don't write the code: you paste a few plain-English prompts into the AI coding assistant you already use, and watch it build.
 
