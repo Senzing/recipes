@@ -16,7 +16,7 @@ Your result won't look identical to the demo - the assistant builds it fresh eac
 - **Intermediate** adds data files to attach, or an earlier recipe first.
 - **Advanced** means production infrastructure and real cloud charges.
 
-Every recipe says what it takes at the top.
+Every recipe says what it takes at the top. Times are elapsed, start to finish, including the time your AI assistant spends building.
 
 ## The recipes
 
