@@ -13,8 +13,8 @@ This project adheres to [Semantic Versioning].
   pharmacy, private clinic billing and provider records, then find medical identity theft, ghost
   patients and NHS number reuse from a plain-English description of what fraud looks like, served
   as an investigator's queue with the evidence behind each suspect
-- Its synthetic ingredient set in `ingredients/patientfraud/`: four CSVs with deliberately
-  different field names, so mapping them through the MCP's `mapping_workflow` is part of the recipe
+- Its synthetic ingredient set in `ingredients/patientfraud/`: four files already in Senzing JSON,
+  so the recipe goes straight to loading
 
 ## [1.4.0] - 2026-10-17
 

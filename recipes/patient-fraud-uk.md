@@ -15,7 +15,7 @@ evidence behind every suspect. In this case four healthcare sources (GP registra
 dispensing, private clinic billing and the clinics themselves) hiding medical identity theft, ghost
 patients and a reused NHS number, among plenty of innocent lookalikes that should not be flagged.
 
-**What it takes:** Intermediate · ~45 min once you're set up · runs on your machine · four CSVs to download and attach
+**What it takes:** Intermediate · ~45 min once you're set up · runs on your machine · four data files to download and attach
 
 ![Claims Fraud Investigator overview - 1,020 records from four sources resolved into 570 people and organisations, with three open fraud cases worth £10,635 in the fraud queue](images/patient-fraud-uk-outcome.png)
 
@@ -35,13 +35,9 @@ who is who across all four sources, including the people who are **not** the sam
 details they shouldn't. Then your assistant turns a plain-English description of three fraud
 patterns into detection logic, without you writing a rule.
 
-A few things worth calling out. First, the four files **don't share field names** - the GP list has
-`forename` and `surname`, the pharmacy has `first_name` and `nhs_no`, clinic billing prefixes
-everything with `patient_`, and the providers file mixes clinics and clinicians in one table. Mapping
-all of it to the Senzing spec is part of the recipe, and the MCP's `mapping_workflow` handles it.
-Second, the trust model matters: a GP registration is the closest thing to "this is really who you
+Two things worth calling out. First, the trust model matters: a GP registration is the closest thing to "this is really who you
 are", while pharmacy and clinic records are where an identity gets *used*. The detection prompt tells
-the assistant that, and it's what separates a thief from a patient who has moved house. Third, the
+the assistant that, and it's what separates a thief from a patient who has moved house. Second, the
 data is full of innocent lookalikes on purpose (families sharing an address, people who moved,
 nicknames), so a good result flags only the real fraud.
 
@@ -50,11 +46,11 @@ nicknames), so a good result flags only the real fraud.
 - **Setup (one-time):** an AI coding assistant, the **Senzing MCP**, and your **Senzing license** - new to this? Start with **[Get Started](../getting-started.md)**.
 - **Where it runs:** the prompts stand Senzing up on your own machine. Edit them if you want it somewhere else.
 - **Attach your Senzing license file to the chat now** (or drop it in your assistant's working folder). The data is about 1,000 records, over the built-in 500-record evaluation limit.
-- **Ingredients:** four synthetic source files in [`ingredients/patientfraud/`](../ingredients/patientfraud/) - download all four, then **attach them to the chat now** (or drop them in your assistant's working folder):
-  - **GP_REGISTRATIONS** - `gp_registrations.csv`, 511 NHS GP practice registrations.
-  - **PHARMACY** - `pharmacy.csv`, 241 community pharmacy dispensing records.
-  - **CLINIC_BILLING** - `clinic_billing.csv`, 240 private clinic claims billed to an insurer.
-  - **PROVIDERS** - `providers.csv`, 28 private clinics, their directors and other clinicians.
+- **Ingredients:** four synthetic source files in [`ingredients/patientfraud/`](../ingredients/patientfraud/), already in Senzing JSON format - download all four, then **attach them to the chat now** (or drop them in your assistant's working folder):
+  - **GP_REGISTRATIONS** - `gp_registrations.jsonl`, 511 NHS GP practice registrations.
+  - **PHARMACY** - `pharmacy.jsonl`, 241 community pharmacy dispensing records.
+  - **CLINIC_BILLING** - `clinic_billing.jsonl`, 240 private clinic claims billed to an insurer.
+  - **PROVIDERS** - `providers.jsonl`, 28 private clinics, their directors and other clinicians.
 
 ## Before you begin
 
@@ -66,8 +62,8 @@ nicknames), so a good result flags only the real fraud.
 
 ## Cook: Load the data and find the fraud
 
-**Three prompts.** Stand up a local Senzing instance, map and load all four sources so Senzing
-resolves everyone in one pass, then tell your assistant what fraud looks like and let it find it.
+**Three prompts.** Stand up a local Senzing instance, load all four sources so Senzing resolves
+everyone in one pass, then tell your assistant what fraud looks like and let it find it.
 
 **Paste this into your AI assistant:**
 
@@ -83,31 +79,29 @@ Hard rules:
 
 **Expected outcome:** a local Senzing instance, ready to load data into SQLite.
 
-Now the four sources. They're raw exports with their own field names, so **mapping is part of this
-step** - let the MCP do it. Load them all together so Senzing resolves everyone across every source
-at once.
+Now the four sources. They're already in Senzing JSON, so there's no mapping to do. Load them all
+together so Senzing resolves everyone across every source at once.
 
 **Then paste this:**
 
 ```
-Goal: Using the existing local Senzing instance, map, load and resolve all four healthcare data sources together.
+Goal: Using the existing local Senzing instance, load and resolve all four healthcare data sources together.
 
 Hard rules:
 - Use the Senzing MCP. Do not rely on general training.
 - These files are synthetic test data (no real people), so you may read and validate them.
-- Map each source with the Senzing MCP mapping_workflow - do not hand-code the Senzing JSON.
-- Map only the fields you need.
+- The four files are already in Senzing JSON format. Do not re-map them. Validate them with the Senzing MCP analyzer before loading.
 - Build the loader with the Senzing MCP sdk_guide.
 - Register the data sources as GP_REGISTRATIONS, PHARMACY, CLINIC_BILLING and PROVIDERS.
 - Use multithreading for loading. Load every record, then process all redo records.
 - Do not use sleep/wakeups.
-- I have provided the source files: gp_registrations.csv, pharmacy.csv, clinic_billing.csv and providers.csv are attached to this chat, or in your working folder. Do not guess a path - ask me if you can't find them.
+- I have provided the source files: gp_registrations.jsonl, pharmacy.jsonl, clinic_billing.jsonl and providers.jsonl are attached to this chat, or in your working folder. Do not guess a path - ask me if you can't find them.
 
 Preferences:
 - Provide me live status updates on the data ingestion.
 
 Steps:
-1. Map, register and load all four files. Note that providers.csv holds both clinics (organisations) and clinicians (people); provider_type says which.
+1. Validate, register and load all four files.
 2. When complete, give me a short load summary: records loaded per source, resolved entities, and relationships found.
 ```
 
@@ -217,7 +211,7 @@ Goal: Add one new clinic claim to the existing Senzing instance and show the fra
 Hard rules:
 - Keep all previous Hard Rules in force.
 - Use the Senzing MCP, not general training.
-- Map the new claim exactly the way clinic_billing.csv was mapped, as data source CLINIC_BILLING with a new record ID.
+- Write the new claim in the same Senzing JSON format as the records in clinic_billing.jsonl, as data source CLINIC_BILLING with a new record ID.
 - Add the one record through the Senzing SDK and process any redo records. Do not reload or purge anything.
 
 Steps:
@@ -236,8 +230,8 @@ rerun the detection prompt. No code changes, just a different briefing.
 
 ## Wrap Up
 
-In ~45 minutes you built a **patient fraud investigation app**: four mismatched healthcare sources
-mapped and resolved into one view of who is who, three fraud patterns detected from a plain-English
+In ~45 minutes you built a **patient fraud investigation app**: four healthcare sources resolved
+into one view of who is who, three fraud patterns detected from a plain-English
 briefing, and an investigator's queue with the evidence behind every suspect. Swap in your own sources
 and your own description of fraud (mind the PII) and the same moves - cook, plate, add - carry over.
 

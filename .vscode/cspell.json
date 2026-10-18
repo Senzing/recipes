@@ -34,7 +34,7 @@
   "ignorePaths": [
     ".git/**",
     "ingredients/customer360/*.csv",
-    "ingredients/patientfraud/*.csv",
+    "ingredients/patientfraud/*.jsonl",
     "ingredients/customer360/generate.py"
   ]
 }
