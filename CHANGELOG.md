@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The changelog format is based on [Keep a Changelog] and [CommonMark].
 This project adheres to [Semantic Versioning].
 
+## [1.4.0] - 2026-10-17
+
+### Changed in 1.4.0
+
+- The ingestion recipe is now "Combine Data & Explore Hidden Connections in PPP Loan Data", naming
+  the dataset the reader actually works with
+- The two Customer 360 recipes are titled part 1 and part 2, so it's clear the stewardship recipe
+  continues the first one rather than standing alone
+- The entry level is "Beginner" instead of "Easy", and the cookbook lists the levels as bullets
+- Demo videos link to the Senzing YouTube channel instead of Google Drive, so they play without a
+  Drive sign-in
+- The cookbook page opens with a new line, and says that times are elapsed, start to finish,
+  including the time your AI assistant spends building
+- Copy fixes from review, including the Prerequisite link and ingredient bolding
+
 ## [1.3.0] - 2026-09-28
 
 ### Changed in 1.3.0
