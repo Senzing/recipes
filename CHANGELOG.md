@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The changelog format is based on [Keep a Changelog] and [CommonMark].
 This project adheres to [Semantic Versioning].
 
+## [1.5.0] - 2026-10-17
+
+### Added to 1.5.0
+
+- A new Intermediate recipe, **Patient Fraud Detection in UK Private Healthcare**: resolve GP,
+  pharmacy, private clinic billing and provider records, then find medical identity theft, ghost
+  patients and NHS number reuse from a plain-English description of what fraud looks like, served
+  as an investigator's queue with the evidence behind each suspect
+- Its synthetic ingredient set in `ingredients/patientfraud/`: four CSVs with deliberately
+  different field names, so mapping them through the MCP's `mapping_workflow` is part of the recipe
+
 ## [1.4.0] - 2026-10-17
 
 ### Changed in 1.4.0

@@ -4,6 +4,7 @@
   "words": [
     "CCLA",
     "CODEOWNER",
+    "colour",
     "cooldown",
     "creds",
     "EFEAT",
@@ -18,7 +19,10 @@
     "Kiro",
     "LEIE",
     "NPPES",
+    "Ofcom",
+    "organisations",
     "Paco",
+    "patientfraud",
     "PNAME",
     "Senzing",
     "shellcheck",
@@ -30,6 +34,7 @@
   "ignorePaths": [
     ".git/**",
     "ingredients/customer360/*.csv",
+    "ingredients/patientfraud/*.csv",
     "ingredients/customer360/generate.py"
   ]
 }

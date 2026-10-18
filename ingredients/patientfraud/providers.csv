@@ -1,0 +1,29 @@
+provider_ref,clinic_id,provider_type,role,organisation_name,clinic_name,company_number,gmc_number,first_name,last_name,gender,date_of_birth,address,city,postcode,phone,email,bank_account
+PV00026,CLN005,CLINICIAN,,,,,5062589,Jack,Howard,M,1973-09-19,95 Stoke Newington Road,Croydon,CR0 7FL,07700 900462,,
+PV00010,CLN005,CLINIC_DIRECTOR,Director / lead clinician,,Aldgate Diagnostics Ltd,,3914829,Liam,Richardson,M,1965-09-03,152 Tanner Street,Wimbledon,SW19 6EJ,07700 900088,liam.richardson73@example.com,20-27-21 43293162
+PV00016,CLN008,CLINIC_DIRECTOR,Director / lead clinician,,Kestrel Lane Physiotherapy Ltd,,4803587,Julian,Hartley,M,1970-04-20,57 Wharf Lane,Hackney,E8 9WW,07700 900077,j.hartley.physio@example.co.uk,40-66-71 39738114
+PV00023,CLN002,CLINICIAN,,,,,4972246,Kieran,Quinn,M,1993-02-10,146 Manor Way,Stoke Newington,N16 5LP,07700 900096,,
+PV00015,CLN008,PRIVATE_CLINIC,,Kestrel Lane Physiotherapy Ltd,,14354234,,,,,,62 Balls Pond Road,Lewisham,SE13 4LB,020 7946 0672,,60-46-18 78286899
+PV00013,CLN007,PRIVATE_CLINIC,,Belmont Pain Management Ltd,,10357974,,,,,,16 Park Avenue,Kilburn,NW6 2SY,020 7946 0862,,20-69-99 64640604
+PV00018,CLN006,CLINICIAN,,,,,7561761,Zachary,Patel,M,1974-02-21,114 Cedar Grove,Lewisham,SE13 6DN,07700 900255,,
+PV00002,CLN001,CLINIC_DIRECTOR,Director / lead clinician,,Thamesview Private Clinic Ltd,,3999402,Holly,Evans,F,1966-11-02,16 Brook Street,Stoke Newington,N16 4AX,07700 900889,holly.evans1@mail.example.co.uk,30-77-52 85818434
+PV00003,CLN002,PRIVATE_CLINIC,,Hollybush Orthopaedic Partners Ltd,,12480068,,,,,,39 Windsor Gardens,Tottenham,N17 2NW,020 7946 0770,,40-79-78 69006780
+PV00007,CLN004,PRIVATE_CLINIC,,Crescent Sports Injury Clinic Ltd,,14114707,,,,,,11 Canal Side,Harrow,HA1 2DR,020 7946 0475,,60-39-29 56505924
+PV00004,CLN002,CLINIC_DIRECTOR,Director / lead clinician,,Hollybush Orthopaedic Partners Ltd,,5711100,Poppy,Singh,F,1987-11-06,63 Seven Sisters Road,Peckham,SE15 5JZ,07700 900659,poppy.singh11@example.co.uk,60-51-13 85642813
+PV00001,CLN001,PRIVATE_CLINIC,,Thamesview Private Clinic Ltd,,13497802,,,,,,64 Beech Crescent,Kilburn,NW6 6JS,020 7946 0964,,20-81-90 95483049
+PV00027,CLN006,CLINICIAN,,,,,3065788,Isla,Campbell,F,1977-05-12,137 Old Kent Road,Peckham,SE15 3QE,07700 900876,,
+PV00021,CLN005,CLINICIAN,,,,,7933430,Sienna,O'Rourke,F,1972-02-20,70 Walworth Road,Harrow,HA1 6RQ,07700 900336,,
+PV00006,CLN003,CLINIC_DIRECTOR,Director / lead clinician,,Marlowe Dermatology Ltd,,4377732,Poppy,Simpson,F,1964-07-19,136 High Street,Stoke Newington,N16 2LN,07700 900036,poppy.simpson47@example.com,60-37-70 97878907
+PV00028,CLN007,CLINICIAN,,,,,4612325,Leonard,Burton,M,1967-04-18,217 High Street,Tottenham,N17 6YB,07700 900944,,
+PV00024,CLN004,CLINICIAN,,,,,5423664,Sebastian,Allen,M,1981-11-06,198 Church Lane,Ilford,IG1 4ZH,07700 900743,,
+PV00011,CLN006,PRIVATE_CLINIC,,Fernleigh Physiotherapy Ltd,,10266998,,,,,,69 Lordship Lane,Stoke Newington,N16 2UP,020 7946 0081,,60-59-27 31350924
+PV00009,CLN005,PRIVATE_CLINIC,,Aldgate Diagnostics Ltd,,12571136,,,,,,239 Manor Way,Lewisham,SE13 5SE,020 7946 0550,,60-53-11 95319495
+PV00020,CLN003,CLINICIAN,,,,,7185634,Callum,Reynolds,M,1961-01-23,45 Tanner Street,Greenwich,SE10 9PG,07700 900398,,
+PV00017,CLN007,CLINICIAN,,,,,5254438,Isla,Lewis,F,1961-11-22,223 Beech Crescent,Harrow,HA1 3EH,07700 900497,,
+PV00012,CLN006,CLINIC_DIRECTOR,Director / lead clinician,,Fernleigh Physiotherapy Ltd,,6410730,Isla,Webb,F,1987-10-09,88 Richmond Terrace,Southwark,SE1 9UN,07700 900965,,60-61-78 51407647
+PV00014,CLN007,CLINIC_DIRECTOR,Director / lead clinician,,Belmont Pain Management Ltd,,7313479,Leanne,Barnes,F,1967-05-21,232 Brook Street,Camden,NW1 5HG,07700 900456,leanne.barnes22@example.co.uk,40-59-32 67409764
+PV00005,CLN003,PRIVATE_CLINIC,,Marlowe Dermatology Ltd,,12887626,,,,,,73 Kilburn Lane,Harrow,HA1 4AY,020 7946 0063,,60-33-68 85990050
+PV00025,CLN004,CLINICIAN,,,,,3703281,Siobhan,Day,F,1986-06-11,189 Mare Street,Peckham,SE15 7YR,07700 900719,,
+PV00022,CLN006,CLINICIAN,,,,,4146249,Stanley,Andrews,M,1990-08-17,137 Copper Lane,Tooting,SW17 2WG,07700 900388,,
+PV00008,CLN004,CLINIC_DIRECTOR,Director / lead clinician,,Crescent Sports Injury Clinic Ltd,,5723434,Charlotte,Allen,F,1963-12-05,142 Albert Street,Stratford,E15 7WZ,07700 900089,,40-82-81 41564356
+PV00019,CLN002,CLINICIAN,,,,,4579188,Max,Green,M,1988-08-04,66 Kilburn Lane,Wimbledon,SW19 7UQ,07700 900949,,

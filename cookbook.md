@@ -35,6 +35,11 @@ Every recipe says what it takes at the top. Times are elapsed, start to finish, 
 
 **What you'll build:** add stewardship screens to the Customer 360 app - where a person makes the calls that need human judgment, with each verdict recorded and surviving the next reload. Do the Customer 360 recipe first.
 
+### [Patient Fraud Detection in UK Private Healthcare](recipes/patient-fraud-uk.md)
+*Fraud · Intermediate · Local · ~45m · Jeff Butcher*
+
+**What you'll build:** a fraud investigation app - sources resolved into who is really who, fraud patterns described in plain English found in them, and an investigator's queue with the evidence behind every suspect. In this case GP, pharmacy, private clinic billing and provider data hiding medical identity theft, ghost patients and a reused NHS number.
+
 ### [Healthcare Exclusion Screening](recipes/nigel-healthcare-aws-entity-browser.md)
 *Compliance · Advanced · AWS · a few hours · Nigel DeFreitas*
 
