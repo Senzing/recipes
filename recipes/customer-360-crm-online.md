@@ -1,15 +1,15 @@
 ---
-title: Customer 360 from CRM + Orders
+title: Customer 360 from CRM + Orders (part 1)
 use_case: customer-360
 difficulty: Intermediate
 est_time: ~45m
-video: https://drive.google.com/file/d/13GlgoZLQ4XbO7zd5hJvqkhQi-7v9mNXt/view?usp=drive_link
+video: https://youtu.be/jq5x8Rtrxnc
 author: Clair Sullivan
 ---
 
-# Customer 360 from CRM + Orders
+# Customer 360 from CRM + Orders (part 1)
 
-**What you'll build:** a single view of your customers across data sources - one customer per person,
+**What you'll build:** a single view of customers across data sources - one customer per person,
 with the complete order and account history no single system holds, duplicate review, and search. In
 this case a CRM export and an online-orders feed, where the same person is two customers: counted
 twice, half their history invisible, their real value anyone's guess. Afterwards, one profile each,
@@ -21,12 +21,12 @@ plus the duplicates you did not know you had.
 
 *1,579 records become **1,192 customers**, **342** of them appearing in both CRM and online orders, and **177 possible duplicates** come up for review - the whole payoff on one landing page.*
 
-▶ **[Watch the demo](https://drive.google.com/file/d/13GlgoZLQ4XbO7zd5hJvqkhQi-7v9mNXt/view?usp=drive_link)** - *"Senzing Cookbook: Customer 360 from CRM + Orders."*
+▶ **[Watch the demo](https://youtu.be/jq5x8Rtrxnc)** - *"Senzing Cookbook: Customer 360 from CRM + Orders (part 1)."*
 
 ## Chef's Note
 
 A Customer 360 is the thing every business says it wants: one complete, trustworthy view of each
-customer, pulled together from every system that knows them. The hard part typically is that the different data sets that are used for these systems are rarely compatible with each other. In addition to being typically messy, they rarely have the things that you need like a common key to bring them together. Sales knows *Edward Flores, customer since 2012, VIP*; the storefront
+customer, pulled together from every system that knows them. The hard part typically is that the different data sets that are used for these systems are rarely compatible with each other. In addition to typically being messy, they rarely have the things that you need like a common key to bring them together. Sales knows *Edward Flores, customer since 2012, VIP*; the storefront
 knows *Ed Flores, six orders, ships to Summerlin*. They are the same people but nothing in the data joins them. That's the gap
 entity resolution closes, and this recipe builds the whole thing on top of it.
 
