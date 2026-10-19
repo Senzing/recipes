@@ -197,43 +197,12 @@ fraudulent claims joining her record on her own name, date of birth and NHS numb
 else's contact details with them. The data sources page shows how the four sources overlap, and every
 number drills down to real entities.
 
-## Plus: Add additional data
-
-**One prompt.** Fraud doesn't wait for the next batch load. Add a single new clinic claim that reuses
-the identity thief's contact details under another patient's identity, and watch Senzing resolve it
-in place and the fraud queue pick it up, with no reload.
-
-**Paste this into your AI assistant:**
-
-```
-Goal: Add one new clinic claim to the existing Senzing instance and show the fraud queue picking it up without a full reload.
-
-Hard rules:
-- Keep all previous Hard Rules in force.
-- Use the Senzing MCP, not general training.
-- Write the new claim in the same Senzing JSON format as the records in clinic_billing.jsonl, as data source CLINIC_BILLING with a new record ID.
-- Add the one record through the Senzing SDK and process any redo records. Do not reload or purge anything.
-
-Steps:
-1. Pick a GP-registered patient who is not already in any fraud case. Create one new clinic claim using that patient's name, date of birth and NHS number, but the medical identity theft suspect's address and phone.
-2. Add it to Senzing and show me which entity it resolved into and why.
-3. Re-run the fraud detection for the affected entities only, update the fraud detection report, and refresh the app.
-4. Tell me what changed in the fraud queue.
-```
-
-**Expected outcome:** the new claim joins the real patient's entity on name, date of birth and NHS
-number, and Senzing relates it to the suspect through the shared address and phone. The identity
-theft case in the queue now lists a third victim, with the extra £ exposure, and the case graph shows
-the new link. You can also tune the detection itself the same way: change the plain-English fraud
-description (for example, "flag any contact detail shared by three or more unrelated patients") and
-rerun the detection prompt. No code changes, just a different briefing.
-
 ## Wrap Up
 
 In ~45 minutes you built a **patient fraud investigation app**: four healthcare sources resolved
 into one view of who is who, three fraud patterns detected from a plain-English
 briefing, and an investigator's queue with the evidence behind every suspect. Swap in your own sources
-and your own description of fraud (mind the PII) and the same moves - cook, plate, add - carry over.
+and your own description of fraud (mind the PII) and the same moves - cook, plate - carry over.
 
 To show it to someone, about ten minutes covers it:
 
