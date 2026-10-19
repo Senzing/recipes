@@ -14,3 +14,7 @@ hero/
 # must be `ingredients/*`, not `ingredients/`, or git never descends far
 # enough to see this negation.)
 !ingredients/customer360/
+
+# Exception: the Patient Fraud ingredient set is small and synthetic too, and
+# ships in the repo for the same reason.
+!ingredients/patientfraud/
