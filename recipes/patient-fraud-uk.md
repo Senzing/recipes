@@ -23,23 +23,68 @@ patients and a reused NHS number, among plenty of innocent lookalikes that shoul
 
 ## Chef's Note
 
-Healthcare fraud rarely announces itself in one system. A stolen identity looks perfectly normal on
-a single clinic claim: right name, right date of birth, right NHS number. What gives it away is
-context from somewhere else. The patient's GP has a different address and phone on file, and those
-contact details belong to someone else entirely. A ghost patient looks like any other patient on a
-clinic invoice; what gives it away is that they exist nowhere else, and their "home address" is the
-clinic director's house.
+Real projects don't start with code. They start with someone describing the business problem in
+plain English: what the data is, how far each source can be trusted, what they're looking for and
+what they're not. So for this recipe I wanted to show you how to start with a requirements
+document. Here's the brief for a UK private health insurer:
 
-That's why this recipe leans on entity resolution first and fraud rules second. Senzing works out
-who is who across all four sources, including the people who are **not** the same but share
-details they shouldn't. Then your assistant turns a plain-English description of three fraud
-patterns into detection logic, without you writing a rule.
+> **The use case.** I work with a UK private health insurer, and we want to detect patient fraud
+> across London. The people are patients and healthcare providers, and the providers include both
+> clinics (organisations) and the doctors who run them.
+>
+> **Our data** (4 sources, about 1,000 records, all synthetic test data):
+>
+> 1. **GP_REGISTRATIONS**: NHS GP practice patient registrations. This is our most trusted source.
+>    If someone is registered with a GP, they're a real person, and the address and phone on their
+>    GP record are genuinely theirs. It has name, gender, date of birth, NHS number, home address,
+>    mobile and sometimes email.
+> 2. **PHARMACY**: community pharmacy dispensing records. Messier (nicknames, missing NHS numbers),
+>    and includes controlled drugs.
+> 3. **CLINIC_BILLING**: claims that private clinics bill to us, one record per claim. It has the
+>    patient's identity and contact details as given at the clinic, sometimes a bank account for
+>    refunds, and the clinic, treatment and amount.
+> 4. **PROVIDERS**: the private clinics (company number, business address, phone, business bank
+>    account), their directors (GMC number, home address, personal mobile, personal bank account),
+>    and other clinicians.
+>
+> Pharmacy and clinic billing are where someone's identity gets *used* to obtain treatment, drugs
+> or money. GP registration is where we learn who someone really is.
+>
+> **What we believe fraud looks like:**
+>
+> 1. **Medical identity theft.** A fraudster uses a real patient's name, date of birth and NHS
+>    number to get private treatment or prescriptions, but gives their own address, phone or email
+>    so the correspondence comes to them. The victim's genuine GP record still shows the victim's
+>    own contact details. The fraudster is usually a real, registered person in their own right,
+>    and often targets several victims, frequently elderly ones.
+> 2. **Patient-provider collusion (ghost patients).** A clinic bills for patients who don't really
+>    exist. These "patients" have no GP registration or pharmacy history anywhere, appear only in
+>    that one clinic's billing, and reuse the clinic director's home address, personal mobile or
+>    personal bank account.
+> 3. **NHS number reuse.** One NHS number used by two clearly different people (different name,
+>    date of birth or gender).
+>
+> **Innocent explanations we don't want flagged:** families living together, people who have
+> moved, and carers or care homes that legitimately share contact details.
+>
+> **What success looks like:** after resolving everyone across the four sources, a fraud detection
+> report. For each fraud pattern, it names the suspects, their victims or ghost patients, the
+> records involved, the details they share, and a one-line reason why each suspect was flagged, so
+> an investigator can see the evidence, not just a score.
 
-Two things worth calling out. First, the trust model matters: a GP registration is the closest thing to "this is really who you
-are", while pharmacy and clinic records are where an identity gets *used*. The detection prompt tells
-the assistant that, and it's what separates a thief from a patient who has moved house. Second, the
-data is full of innocent lookalikes on purpose (families sharing an address, people who moved,
-nicknames), so a good result flags only the real fraud.
+The detection prompt in the Cook step is this brief, nearly word for word. Your assistant turns it
+into detection logic without you writing a rule, and when you bring your own use case, a brief like
+this is the thing to write first.
+
+Notice why the brief needs entity resolution before any fraud rule. A stolen identity looks
+perfectly normal on a single clinic claim: right name, right date of birth, right NHS number. What
+gives it away is context from somewhere else - the patient's GP has a different address and phone
+on file, and those contact details belong to someone else entirely. A ghost patient looks like any
+other patient on an invoice; what gives it away is that they exist nowhere else, and their "home
+address" is the clinic director's house. Senzing works out who is who across all four sources,
+including the people who are **not** the same but share details they shouldn't. And the data is
+full of the innocent lookalikes the brief warns about (families sharing an address, people who
+moved, nicknames), so a good result flags only the real fraud.
 
 ## Setup: What you'll need
 
